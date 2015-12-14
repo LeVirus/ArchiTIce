@@ -9,7 +9,8 @@ LDFLAGS=-lIceE -lIceEC #-lIceUtil #-lIceStorm -pthread -lvlc
 CXX= g++
 OBJ_DIR=obj/
 SRC_DIR=src/
-INCLUDE_DIR=include/
+INCLUDE_DIR=Ice/
+INCLUDE=include/
 LIB_DIR=Ice/libIce/
 BIN_DIR=bin/
 
@@ -17,14 +18,17 @@ SRC=$(wildcard $(SRC_DIR)*.cpp)
 SRC_BIS=$(subst $(SRC_DIR),$(OBJ_DIR),$(SRC))
 OBJ=$(SRC_BIS:.cpp=.o)
 
-EXE=exe
+EXE=$(BIN_DIR)exe
 
 all: $(EXE)
+
+slice: interface.ice
+	slice2cpp $< && mv interface.cpp $(SRC_DIR) && mv interface.h $(INCLUDE)
 
 $(EXE): $(OBJ) main.cpp
 	$(CXX) $(CXXFLAGS) -I $(INCLUDE_DIR)  -L $(LIB_DIR) $^ $(LDFLAGS) -o $@ 
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCLUDE_DIR)%.h
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCLUDE)%.h
 	$(CXX) $(CXXFLAGS) -I $(INCLUDE_DIR) -c $< -o $@
 
 .PHONY: clean mrproper
@@ -42,4 +46,3 @@ mrproper: clean
 # $^: the filenames of all the prerequisites, separated by spaces, discard duplicates.
 # $+: similar to $^, but includes duplicates.
 # $?: the names of all prerequisites that are newer than the target, separated by spaces.
-
