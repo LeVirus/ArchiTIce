@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1449762817 source:/mnt/Donnees_itinerantes/archiFinal/bibl/main.cpp
+	<iostream>
+	"BiblAudio.h"
+
+1449762974 /mnt/Donnees_itinerantes/archiFinal/bibl/include/BiblAudio.h
+	<string>
+	<map>
+	<vector>
+
