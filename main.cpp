@@ -16,14 +16,14 @@ int main()
 }*/
  
 #include <iostream>
-#include "include/jBiblAudio.h"
+#include "../include/jBiblAudio.h"
 #include <Ice/Ice.h>
-#include <Printer.h>
+//#include <Printer.h>
  
 using namespace std;
-using namespace Demo;
+//using namespace Demo;
  
-class PrinterI : public Printer {
+/*class PrinterI : public Printer {
 public:
     virtual void printString(const string& s, const Ice::Current&);
 };
@@ -33,7 +33,7 @@ PrinterI::
 printString(const string& s, const Ice::Current&)
 {
     cout << s << endl;
-}
+}*/
  
 int
 main(int argc, char* argv[])
@@ -43,9 +43,9 @@ main(int argc, char* argv[])
     try {
         ic = Ice::initialize(argc, argv);
         Ice::ObjectAdapterPtr adapter =
-            ic->createObjectAdapterWithEndpoints("SimplePrinterAdapter", "default -p 10000");
-        Ice::ObjectPtr object = new PrinterI;
-        adapter->add(object, ic->stringToIdentity("SimplePrinter"));
+            ic->createObjectAdapterWithEndpoints("BiblAudioAdapter", "default -p 10000");
+        Ice::ObjectPtr object = new BiblAudio;
+        adapter->add(object, ic->stringToIdentity("BiblAudio"));
         adapter->activate();
         ic->waitForShutdown();
     } catch (const Ice::Exception& e) {
