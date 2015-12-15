@@ -1,9 +1,9 @@
-DEBUG=yes
-ifeq ($(DEBUG),yes)
-	CXXFLAGS=-std=c++11 -Wall -Wextra -pedantic -g
-else
-	CXXFLAGS=-std=c++11 -march=native -O2
-endif
+#DEBUG=yes
+#ifeq ($(DEBUG),yes)
+#	CXXFLAGS=-std=c++11 -Wall -Wextra -pedantic -g
+#else
+#	CXXFLAGS=-std=c++11 -march=native -O2
+#endif
 
 LDFLAGS=-lIceE -lIceEC #-lIceUtil #-lIceStorm -pthread -lvlc
 CXX= g++
@@ -21,6 +21,9 @@ OBJ=$(SRC_BIS:.cpp=.o)
 EXE=$(BIN_DIR)exe
 
 all: $(EXE)
+
+sliceJava: interface.ice
+	slice2java --output-dir Slicejava interface.ice
 
 slice: interface.ice
 	slice2cpp $< && mv interface.cpp $(SRC_DIR) && mv interface.h $(INCLUDE)

@@ -18,7 +18,7 @@
 // </auto-generated>
 //
 
-#include "../include/interface.h"
+#include <../include/interface.h>
 #include <Ice/LocalException.h>
 #include <Ice/ObjectFactory.h>
 #include <Ice/BasicStream.h>
