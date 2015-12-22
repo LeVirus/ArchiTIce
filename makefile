@@ -5,7 +5,7 @@
 #	CXXFLAGS=-std=c++11 -march=native -O2
 #endif
 
-LDFLAGS=-lIceE -lIceEC #-lIceUtil #-lIceStorm -pthread -lvlc
+LDFLAGS=-lIceE -lIceEC -pthread#-lIceUtil #-lIceStorm -pthread -lvlc
 CXX= g++
 OBJ_DIR=obj/
 SRC_DIR=src/
