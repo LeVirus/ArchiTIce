@@ -6,10 +6,10 @@ BiblAudio::BiblAudio(){
 }
 
 
- Morceau BiblAudio::bRechercherMorceau( std::string sNomMusique, const Ice::Current&)
+biblAudio::Morceau BiblAudio::bRechercherMorceau( const std::string &sNomMusique, const Ice::Current&)
 {
-    Morceau a;
-    std::map< std::string, Morceau >::const_iterator it;
+    biblAudio::Morceau a;
+    std::map< std::string, biblAudio::Morceau >::const_iterator it;
     it = mmapMorceaux.find( sNomMusique );
     if( it != mmapMorceaux.end() )
     {
@@ -19,12 +19,12 @@ BiblAudio::BiblAudio(){
     return a;
 }
 
- std::vector< Morceau > BiblAudio::bRechercherMorceauxArtiste( std::string sNomArtiste, const Ice::Current& )
+ /*std::vector< Morceau>*/ biblAudio::mvectRecherche BiblAudio::getMorceaux( const std::string &sNomArtiste, const Ice::Current& )
 {
     mvectRecherche.clear();
-    for( std::map< std::string, Morceau >::iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
+    for( /*std::map< std::string, Morceau >*/biblAudio::mmapMorceaux::iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
     {
-        if( ( (*it) . second ).msNomArtiste == sNomArtiste )
+        if( ( (*it) . second ).msNomMorceau == sNomArtiste )
         {
             mvectRecherche.push_back( (*it) . second );
             //faire une fonction copie dans Morceau
@@ -36,24 +36,24 @@ BiblAudio::BiblAudio(){
 
 void BiblAudio::afficherMorceaux(const Ice::Current&)
 {
-    for( std::map< std::string, Morceau >::const_iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
+    for( /*std::map< std::string, Morceau >*/biblAudio::mmapMorceaux::const_iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
     {
         std::cout << (*it) .first <<"\n";
     }
 }
 
-bool BiblAudio::bAjoutMorceau(std::string sNomArt,  std::string sNomMorc,  std::string sFic, int uiDureeMorc , int uiDateSortie, const Ice::Current&){
-    Morceau morceau;
+bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sNomMorc, const  std::string &sFic,  int uiDureeMorc , int uiDateSortie, const Ice::Current&){
+    biblAudio::Morceau morceau;
     morceau.msFichier = sFic;
-    morceau.msNomArtiste = sNomArt;
+    morceau.msNomMorceau = sNomArt;
     morceau.muiDateSortie = uiDateSortie;
     morceau.muiDureeMorceau = uiDureeMorc;
-    mmapMorceaux . insert( std::pair< std::string, Morceau > ( sNomArt, morceau ) );
+    mmapMorceaux . insert( std::pair< std::string, biblAudio::Morceau > ( sNomArt, morceau ) );
     return true;
 }
 
-bool BiblAudio::bSuprMorceau( std::string sNomMorc , const Ice::Current&){
-    std::map< std::string, Morceau >::iterator it;
+bool BiblAudio::bSuprMorceau( const std::string &sNomMorc , const Ice::Current&){
+    /*std::map< std::string, Morceau >*/biblAudio::mmapMorceaux::iterator it;
     it = mmapMorceaux.find( sNomMorc );
     if( it != mmapMorceaux.end() )
     {
