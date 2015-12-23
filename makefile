@@ -29,7 +29,7 @@ slice: interface.ice
 	slice2cpp $< && mv interface.cpp $(SRC_DIR) && mv interface.h $(INCLUDE)
 
 $(EXE): $(OBJ) main.cpp
-	$(CXX) $(CXXFLAGS) -I $(INCLUDE_DIR)  -L $(LIB_DIR) $^ $(LDFLAGS) -o $@ 
+	$(CXX) $(CXXFLAGS)   $^ $(LDFLAGS) -o $@ #-L $(LIB_DIR)-I $(INCLUDE_DIR) 
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCLUDE)%.h
 	$(CXX) $(CXXFLAGS) -I $(INCLUDE_DIR) -c $< -o $@

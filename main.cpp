@@ -16,7 +16,7 @@ int main()
 }*/
  
 #include <iostream>
-#include "../include/jBiblAudio.h"
+#include "include/jBiblAudio.h"
 #include <Ice/Ice.h>
 //#include <Printer.h>
  
