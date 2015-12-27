@@ -9,9 +9,9 @@ LDFLAGS= -pthread -lIce -lIceUtil #-lIceStorm   -lvlc
 CXX= g++
 OBJ_DIR=obj/
 SRC_DIR=src/
-INCLUDE_DIR=Ice/
+#INCLUDE_DIR=include/
 INCLUDE=include/
-LIB_DIR=Ice/libIce/
+LIB_DIR=IceLib/
 BIN_DIR=bin/
 
 SRC=$(wildcard $(SRC_DIR)*.cpp)
@@ -29,10 +29,10 @@ slice: interface.ice
 	slice2cpp $< && mv interface.cpp $(SRC_DIR) && mv interface.h $(INCLUDE)
 
 $(EXE): $(OBJ) main.cpp
-	$(CXX) $(CXXFLAGS)  $^ $(LDFLAGS) -o $@ #-I $(INCLUDE_DIR)  -L $(LIB_DIR)
+	$(CXX) $(CXXFLAGS)  $^ $(LDFLAGS) -o $@ -I $(INCLUDE)  -L $(LIB_DIR)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCLUDE)%.h
-	$(CXX) $(CXXFLAGS)  -c $< -o $@ #-I $(INCLUDE_DIR)
+	$(CXX) $(CXXFLAGS)  -c $< -o $@ -I $(INCLUDE)
 
 .PHONY: clean mrproper
 
