@@ -6,12 +6,11 @@ public class Client {
         Ice.Communicator ic = null;
         try {
             ic = Ice.Util.initialize(args);
-            Ice.ObjectAdapter adapter =
-                ic.createObjectAdapterWithEndpoints("SimplePrinterAdapter", "default -p 10000");
-            Ice.Object object = new PrinterI();
-            adapter.add(object, ic.stringToIdentity("SimplePrinter"));
-            adapter.activate();
-            ic.waitForShutdown();
+            Ice.ObjectPrx base = ic.stringToProxy("SimplePrinter:default -p 10000");
+            biblAudio.ServeurIcePrx printer = biblAudio.ServeurIcePrxHelper.checkedCast(base);
+            if (printer == null)
+                throw new Error("Invalid proxy");
+ 
         } catch (Ice.LocalException e) {
             e.printStackTrace();
             status = 1;
