@@ -5,7 +5,7 @@ else
 	CXXFLAGS=-std=c++98 -march=native -O2
 endif
 
-LDFLAGS=-lIce  -lIceUtil  -pthread# -lvlc -lIceStorm
+LDFLAGS= -pthread -lIce -lIceUtil #-lIceStorm   -lvlc    
 CXX= g++
 OBJ_DIR=obj/
 SRC_DIR=src/
@@ -18,7 +18,7 @@ SRC=$(wildcard $(SRC_DIR)*.cpp)
 SRC_BIS=$(subst $(SRC_DIR),$(OBJ_DIR),$(SRC))
 OBJ=$(SRC_BIS:.cpp=.o)
 
-EXE=$(BIN_DIR)exe
+EXE=$(BIN_DIR)serveur
 
 all: $(EXE)
 
@@ -29,10 +29,10 @@ slice: interface.ice
 	slice2cpp $< && mv interface.cpp $(SRC_DIR) && mv interface.h $(INCLUDE)
 
 $(EXE): $(OBJ) main.cpp
-	$(CXX) $(CXXFLAGS)   $^ $(LDFLAGS) -o $@ #-L $(LIB_DIR)-I $(INCLUDE_DIR) 
+	$(CXX) $(CXXFLAGS)  $^ $(LDFLAGS) -o $@ #-I $(INCLUDE_DIR)  -L $(LIB_DIR)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCLUDE)%.h
-	$(CXX) $(CXXFLAGS) -I $(INCLUDE_DIR) -c $< -o $@
+	$(CXX) $(CXXFLAGS)  -c $< -o $@ #-I $(INCLUDE_DIR)
 
 .PHONY: clean mrproper
 
