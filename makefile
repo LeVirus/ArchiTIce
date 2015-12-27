@@ -1,11 +1,11 @@
-#DEBUG=yes
-#ifeq ($(DEBUG),yes)
-#	CXXFLAGS=-std=c++11 -Wall -Wextra -pedantic -g
-#else
-#	CXXFLAGS=-std=c++11 -march=native -O2
-#endif
+DEBUG=yes
+ifeq ($(DEBUG),yes)
+	CXXFLAGS=-std=c++98 -Wall -Wextra -pedantic -g
+else
+	CXXFLAGS=-std=c++98 -march=native -O2
+endif
 
-LDFLAGS=-lIce -lIceStorm -lIceUtil  -pthread# -lvlc
+LDFLAGS=-lIce  -lIceUtil  -pthread# -lvlc -lIceStorm
 CXX= g++
 OBJ_DIR=obj/
 SRC_DIR=src/
