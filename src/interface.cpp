@@ -19,7 +19,7 @@
 //
 
 //#include <../include/interface.h>
-#include "/home/cyril/Documents/FACMaster1/ArchiTech/ArchiDistrib/TP/archiFinal/testZone/bibl/include/interface.h"
+#include "interface.h"
 #include <IceUtil/PushDisableWarnings.h>
 #include <Ice/LocalException.h>
 #include <Ice/ObjectFactory.h>
