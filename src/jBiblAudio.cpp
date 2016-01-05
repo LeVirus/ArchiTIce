@@ -2,7 +2,7 @@
 #include <iostream>
 
 BiblAudio::BiblAudio(){
-
+     instVLC = libvlc_new (0, NULL);
 }
 
 
@@ -42,6 +42,8 @@ void BiblAudio::afficherMorceaux(const Ice::Current&)
     }
 }
 
+/*erreur dans les parametres nomMorceau non traiter
+regenerer l'interface a l'inclusion vlc*/
 bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sNomMorc, const  std::string &sFic,  int uiDureeMorc , int uiDateSortie, const Ice::Current&){
     biblAudio::Morceau morceau;
     morceau.msFichier = sFic;

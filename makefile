@@ -5,7 +5,7 @@ else
 	CXXFLAGS=-std=c++98 -march=native -O2
 endif
 
-LDFLAGS= -pthread -lIce -lIceUtil #-lIceStorm   -lvlc    
+LDFLAGS= -pthread -lIce -lIceUtil -lvlc    
 CXX= g++
 OBJ_DIR=obj/
 SRC_DIR=src/
@@ -22,8 +22,8 @@ EXE=$(BIN_DIR)serveur
 
 all: $(EXE)
 
-sliceJava: interface.ice
-	slice2java --output-dir Slicejava interface.ice
+#sliceJava: interface.ice
+#	slice2java --output-dir Slicejava interface.ice
 
 slice: interface.ice
 	slice2cpp $< && mv interface.cpp $(SRC_DIR) && mv interface.h $(INCLUDE)

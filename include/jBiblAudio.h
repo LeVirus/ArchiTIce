@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include "vlc/vlc.h"
 #include "../include/interface.h"
 
 
@@ -16,10 +17,10 @@ struct Morceau
 class BiblAudio : public  biblAudio :: ServeurIce
 {
 private:
-   /*std::vector< Morceau >*/ biblAudio::mvectRecherche mvectRecherche;
-
-    //conteneur de morceau avec le nom de l'artiste comme cle primaire
-    /*std::map< std::string, Morceau >*/biblAudio::mmapMorceaux  mmapMorceaux;
+    biblAudio::mvectRecherche mvectRecherche;
+    
+    libvlc_instance_t * instVLC;
+    biblAudio::mmapMorceaux  mmapMorceaux;
 public:
     BiblAudio();
     /*std::vector< Morceau >*/biblAudio::mvectRecherche getMorceaux( const std::string &sNomArtiste, const Ice::Current& );
