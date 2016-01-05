@@ -28,7 +28,15 @@ public interface _ServeurIceOperations
 
     boolean bAjoutMorceau(String sNomArt, String sNomMorc, String sFic, int uiDureeMorc, int uiDateSortie, Ice.Current __current);
 
-    boolean bSuprMorceau(String sNomMorc, Ice.Current __current);
+    boolean bSuprMorceau(String sNomMorc, String sNomArt, Ice.Current __current);
 
-    Morceau[] getMorceaux(String sNomArt, Ice.Current __current);
+    Morceau[] getMorceauxArt(String sNomArt, Ice.Current __current);
+
+    Morceau[] getMorceauxMorc(String sNomMorc, Ice.Current __current);
+
+    void stopSound(Ice.Current __current);
+
+    void readSoundFic(String pathToFic, Ice.Current __current);
+
+    void readSound(String sNomMorceau, String sNomArtiste, Ice.Current __current);
 }

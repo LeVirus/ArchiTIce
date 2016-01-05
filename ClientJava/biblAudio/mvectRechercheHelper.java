@@ -43,7 +43,7 @@ public final class mvectRechercheHelper
     read(IceInternal.BasicStream __is)
     {
         Morceau[] __v;
-        final int __len0 = __is.readAndCheckSeqSize(10);
+        final int __len0 = __is.readAndCheckSeqSize(11);
         __v = new Morceau[__len0];
         for(int __i0 = 0; __i0 < __len0; __i0++)
         {

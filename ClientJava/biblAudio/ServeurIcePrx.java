@@ -148,37 +148,41 @@ public interface ServeurIcePrx extends Ice.ObjectPrx
 
     public boolean end_bAjoutMorceau(Ice.AsyncResult __result);
 
-    public boolean bSuprMorceau(String sNomMorc);
+    public boolean bSuprMorceau(String sNomMorc, String sNomArt);
 
-    public boolean bSuprMorceau(String sNomMorc, java.util.Map<String, String> __ctx);
+    public boolean bSuprMorceau(String sNomMorc, String sNomArt, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc);
+    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, String sNomArt);
 
-    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, java.util.Map<String, String> __ctx);
+    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, String sNomArt, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, Ice.Callback __cb);
+    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, String sNomArt, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, String sNomArt, java.util.Map<String, String> __ctx, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, Callback_ServeurIce_bSuprMorceau __cb);
+    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, String sNomArt, Callback_ServeurIce_bSuprMorceau __cb);
 
-    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, java.util.Map<String, String> __ctx, Callback_ServeurIce_bSuprMorceau __cb);
+    public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, String sNomArt, java.util.Map<String, String> __ctx, Callback_ServeurIce_bSuprMorceau __cb);
 
     public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, 
+                                              String sNomArt, 
                                               IceInternal.Functional_BoolCallback __responseCb, 
                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
     public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, 
+                                              String sNomArt, 
                                               IceInternal.Functional_BoolCallback __responseCb, 
                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
                                               IceInternal.Functional_BoolCallback __sentCb);
 
     public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, 
+                                              String sNomArt, 
                                               java.util.Map<String, String> __ctx, 
                                               IceInternal.Functional_BoolCallback __responseCb, 
                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
     public Ice.AsyncResult begin_bSuprMorceau(String sNomMorc, 
+                                              String sNomArt, 
                                               java.util.Map<String, String> __ctx, 
                                               IceInternal.Functional_BoolCallback __responseCb, 
                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
@@ -186,41 +190,193 @@ public interface ServeurIcePrx extends Ice.ObjectPrx
 
     public boolean end_bSuprMorceau(Ice.AsyncResult __result);
 
-    public Morceau[] getMorceaux(String sNomArt);
+    public Morceau[] getMorceauxArt(String sNomArt);
 
-    public Morceau[] getMorceaux(String sNomArt, java.util.Map<String, String> __ctx);
+    public Morceau[] getMorceauxArt(String sNomArt, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt, java.util.Map<String, String> __ctx);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt, Ice.Callback __cb);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt, java.util.Map<String, String> __ctx, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt, Callback_ServeurIce_getMorceaux __cb);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt, Callback_ServeurIce_getMorceauxArt __cb);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt, java.util.Map<String, String> __ctx, Callback_ServeurIce_getMorceaux __cb);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt, java.util.Map<String, String> __ctx, Callback_ServeurIce_getMorceauxArt __cb);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt, 
-                                             IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
-                                             IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt, 
+                                                IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
+                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt, 
-                                             IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
-                                             IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                             IceInternal.Functional_BoolCallback __sentCb);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt, 
+                                                IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
+                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                                IceInternal.Functional_BoolCallback __sentCb);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt, 
-                                             java.util.Map<String, String> __ctx, 
-                                             IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
-                                             IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt, 
+                                                java.util.Map<String, String> __ctx, 
+                                                IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
+                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
-    public Ice.AsyncResult begin_getMorceaux(String sNomArt, 
-                                             java.util.Map<String, String> __ctx, 
-                                             IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
-                                             IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                             IceInternal.Functional_BoolCallback __sentCb);
+    public Ice.AsyncResult begin_getMorceauxArt(String sNomArt, 
+                                                java.util.Map<String, String> __ctx, 
+                                                IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
+                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                                IceInternal.Functional_BoolCallback __sentCb);
 
-    public Morceau[] end_getMorceaux(Ice.AsyncResult __result);
+    public Morceau[] end_getMorceauxArt(Ice.AsyncResult __result);
+
+    public Morceau[] getMorceauxMorc(String sNomMorc);
+
+    public Morceau[] getMorceauxMorc(String sNomMorc, java.util.Map<String, String> __ctx);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc, java.util.Map<String, String> __ctx);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc, Callback_ServeurIce_getMorceauxMorc __cb);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc, java.util.Map<String, String> __ctx, Callback_ServeurIce_getMorceauxMorc __cb);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc, 
+                                                 IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
+                                                 IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc, 
+                                                 IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
+                                                 IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                                 IceInternal.Functional_BoolCallback __sentCb);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc, 
+                                                 java.util.Map<String, String> __ctx, 
+                                                 IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
+                                                 IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_getMorceauxMorc(String sNomMorc, 
+                                                 java.util.Map<String, String> __ctx, 
+                                                 IceInternal.Functional_GenericCallback1<Morceau[]> __responseCb, 
+                                                 IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                                 IceInternal.Functional_BoolCallback __sentCb);
+
+    public Morceau[] end_getMorceauxMorc(Ice.AsyncResult __result);
+
+    public void stopSound();
+
+    public void stopSound(java.util.Map<String, String> __ctx);
+
+    public Ice.AsyncResult begin_stopSound();
+
+    public Ice.AsyncResult begin_stopSound(java.util.Map<String, String> __ctx);
+
+    public Ice.AsyncResult begin_stopSound(Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_stopSound(java.util.Map<String, String> __ctx, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_stopSound(Callback_ServeurIce_stopSound __cb);
+
+    public Ice.AsyncResult begin_stopSound(java.util.Map<String, String> __ctx, Callback_ServeurIce_stopSound __cb);
+
+    public Ice.AsyncResult begin_stopSound(IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_stopSound(IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                           IceInternal.Functional_BoolCallback __sentCb);
+
+    public Ice.AsyncResult begin_stopSound(java.util.Map<String, String> __ctx, 
+                                           IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_stopSound(java.util.Map<String, String> __ctx, 
+                                           IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                           IceInternal.Functional_BoolCallback __sentCb);
+
+    public void end_stopSound(Ice.AsyncResult __result);
+
+    public void readSoundFic(String pathToFic);
+
+    public void readSoundFic(String pathToFic, java.util.Map<String, String> __ctx);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic, java.util.Map<String, String> __ctx);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic, Callback_ServeurIce_readSoundFic __cb);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic, java.util.Map<String, String> __ctx, Callback_ServeurIce_readSoundFic __cb);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic, 
+                                              IceInternal.Functional_VoidCallback __responseCb, 
+                                              IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic, 
+                                              IceInternal.Functional_VoidCallback __responseCb, 
+                                              IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                              IceInternal.Functional_BoolCallback __sentCb);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic, 
+                                              java.util.Map<String, String> __ctx, 
+                                              IceInternal.Functional_VoidCallback __responseCb, 
+                                              IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_readSoundFic(String pathToFic, 
+                                              java.util.Map<String, String> __ctx, 
+                                              IceInternal.Functional_VoidCallback __responseCb, 
+                                              IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                              IceInternal.Functional_BoolCallback __sentCb);
+
+    public void end_readSoundFic(Ice.AsyncResult __result);
+
+    public void readSound(String sNomMorceau, String sNomArtiste);
+
+    public void readSound(String sNomMorceau, String sNomArtiste, java.util.Map<String, String> __ctx);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, String sNomArtiste);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, String sNomArtiste, java.util.Map<String, String> __ctx);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, String sNomArtiste, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, String sNomArtiste, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, String sNomArtiste, Callback_ServeurIce_readSound __cb);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, String sNomArtiste, java.util.Map<String, String> __ctx, Callback_ServeurIce_readSound __cb);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, 
+                                           String sNomArtiste, 
+                                           IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, 
+                                           String sNomArtiste, 
+                                           IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                           IceInternal.Functional_BoolCallback __sentCb);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, 
+                                           String sNomArtiste, 
+                                           java.util.Map<String, String> __ctx, 
+                                           IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_readSound(String sNomMorceau, 
+                                           String sNomArtiste, 
+                                           java.util.Map<String, String> __ctx, 
+                                           IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                           IceInternal.Functional_BoolCallback __sentCb);
+
+    public void end_readSound(Ice.AsyncResult __result);
 }

@@ -85,14 +85,34 @@ public abstract class _ServeurIceDisp extends Ice.ObjectImpl implements ServeurI
         return bRechercherMorceau(sNomMusique, null);
     }
 
-    public final boolean bSuprMorceau(String sNomMorc)
+    public final boolean bSuprMorceau(String sNomMorc, String sNomArt)
     {
-        return bSuprMorceau(sNomMorc, null);
+        return bSuprMorceau(sNomMorc, sNomArt, null);
     }
 
-    public final Morceau[] getMorceaux(String sNomArt)
+    public final Morceau[] getMorceauxArt(String sNomArt)
     {
-        return getMorceaux(sNomArt, null);
+        return getMorceauxArt(sNomArt, null);
+    }
+
+    public final Morceau[] getMorceauxMorc(String sNomMorc)
+    {
+        return getMorceauxMorc(sNomMorc, null);
+    }
+
+    public final void readSound(String sNomMorceau, String sNomArtiste)
+    {
+        readSound(sNomMorceau, sNomArtiste, null);
+    }
+
+    public final void readSoundFic(String pathToFic)
+    {
+        readSoundFic(pathToFic, null);
+    }
+
+    public final void stopSound()
+    {
+        stopSound(null);
     }
 
     public static Ice.DispatchStatus ___afficherMorceaux(ServeurIce __obj, IceInternal.Incoming __inS, Ice.Current __current)
@@ -145,26 +165,77 @@ public abstract class _ServeurIceDisp extends Ice.ObjectImpl implements ServeurI
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
         String sNomMorc;
+        String sNomArt;
         sNomMorc = __is.readString();
+        sNomArt = __is.readString();
         __inS.endReadParams();
-        boolean __ret = __obj.bSuprMorceau(sNomMorc, __current);
+        boolean __ret = __obj.bSuprMorceau(sNomMorc, sNomArt, __current);
         IceInternal.BasicStream __os = __inS.__startWriteParams(Ice.FormatType.DefaultFormat);
         __os.writeBool(__ret);
         __inS.__endWriteParams(true);
         return Ice.DispatchStatus.DispatchOK;
     }
 
-    public static Ice.DispatchStatus ___getMorceaux(ServeurIce __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    public static Ice.DispatchStatus ___getMorceauxArt(ServeurIce __obj, IceInternal.Incoming __inS, Ice.Current __current)
     {
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
         String sNomArt;
         sNomArt = __is.readString();
         __inS.endReadParams();
-        Morceau[] __ret = __obj.getMorceaux(sNomArt, __current);
+        Morceau[] __ret = __obj.getMorceauxArt(sNomArt, __current);
         IceInternal.BasicStream __os = __inS.__startWriteParams(Ice.FormatType.DefaultFormat);
         mvectRechercheHelper.write(__os, __ret);
         __inS.__endWriteParams(true);
+        return Ice.DispatchStatus.DispatchOK;
+    }
+
+    public static Ice.DispatchStatus ___getMorceauxMorc(ServeurIce __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    {
+        __checkMode(Ice.OperationMode.Normal, __current.mode);
+        IceInternal.BasicStream __is = __inS.startReadParams();
+        String sNomMorc;
+        sNomMorc = __is.readString();
+        __inS.endReadParams();
+        Morceau[] __ret = __obj.getMorceauxMorc(sNomMorc, __current);
+        IceInternal.BasicStream __os = __inS.__startWriteParams(Ice.FormatType.DefaultFormat);
+        mvectRechercheHelper.write(__os, __ret);
+        __inS.__endWriteParams(true);
+        return Ice.DispatchStatus.DispatchOK;
+    }
+
+    public static Ice.DispatchStatus ___stopSound(ServeurIce __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    {
+        __checkMode(Ice.OperationMode.Normal, __current.mode);
+        __inS.readEmptyParams();
+        __obj.stopSound(__current);
+        __inS.__writeEmptyParams();
+        return Ice.DispatchStatus.DispatchOK;
+    }
+
+    public static Ice.DispatchStatus ___readSoundFic(ServeurIce __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    {
+        __checkMode(Ice.OperationMode.Normal, __current.mode);
+        IceInternal.BasicStream __is = __inS.startReadParams();
+        String pathToFic;
+        pathToFic = __is.readString();
+        __inS.endReadParams();
+        __obj.readSoundFic(pathToFic, __current);
+        __inS.__writeEmptyParams();
+        return Ice.DispatchStatus.DispatchOK;
+    }
+
+    public static Ice.DispatchStatus ___readSound(ServeurIce __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    {
+        __checkMode(Ice.OperationMode.Normal, __current.mode);
+        IceInternal.BasicStream __is = __inS.startReadParams();
+        String sNomMorceau;
+        String sNomArtiste;
+        sNomMorceau = __is.readString();
+        sNomArtiste = __is.readString();
+        __inS.endReadParams();
+        __obj.readSound(sNomMorceau, sNomArtiste, __current);
+        __inS.__writeEmptyParams();
         return Ice.DispatchStatus.DispatchOK;
     }
 
@@ -174,11 +245,15 @@ public abstract class _ServeurIceDisp extends Ice.ObjectImpl implements ServeurI
         "bAjoutMorceau",
         "bRechercherMorceau",
         "bSuprMorceau",
-        "getMorceaux",
+        "getMorceauxArt",
+        "getMorceauxMorc",
         "ice_id",
         "ice_ids",
         "ice_isA",
-        "ice_ping"
+        "ice_ping",
+        "readSound",
+        "readSoundFic",
+        "stopSound"
     };
 
     public Ice.DispatchStatus __dispatch(IceInternal.Incoming in, Ice.Current __current)
@@ -209,23 +284,39 @@ public abstract class _ServeurIceDisp extends Ice.ObjectImpl implements ServeurI
             }
             case 4:
             {
-                return ___getMorceaux(this, in, __current);
+                return ___getMorceauxArt(this, in, __current);
             }
             case 5:
             {
-                return ___ice_id(this, in, __current);
+                return ___getMorceauxMorc(this, in, __current);
             }
             case 6:
             {
-                return ___ice_ids(this, in, __current);
+                return ___ice_id(this, in, __current);
             }
             case 7:
             {
-                return ___ice_isA(this, in, __current);
+                return ___ice_ids(this, in, __current);
             }
             case 8:
             {
+                return ___ice_isA(this, in, __current);
+            }
+            case 9:
+            {
                 return ___ice_ping(this, in, __current);
+            }
+            case 10:
+            {
+                return ___readSound(this, in, __current);
+            }
+            case 11:
+            {
+                return ___readSoundFic(this, in, __current);
+            }
+            case 12:
+            {
+                return ___stopSound(this, in, __current);
             }
         }
 

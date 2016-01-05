@@ -24,6 +24,8 @@ public class Morceau implements java.lang.Cloneable, java.io.Serializable
 {
     public String msNomMorceau;
 
+    public String msNomArtiste;
+
     public String msFichier;
 
     public int muiDateSortie;
@@ -33,12 +35,14 @@ public class Morceau implements java.lang.Cloneable, java.io.Serializable
     public Morceau()
     {
         msNomMorceau = "";
+        msNomArtiste = "";
         msFichier = "";
     }
 
-    public Morceau(String msNomMorceau, String msFichier, int muiDateSortie, int muiDureeMorceau)
+    public Morceau(String msNomMorceau, String msNomArtiste, String msFichier, int muiDateSortie, int muiDureeMorceau)
     {
         this.msNomMorceau = msNomMorceau;
+        this.msNomArtiste = msNomArtiste;
         this.msFichier = msFichier;
         this.muiDateSortie = muiDateSortie;
         this.muiDureeMorceau = muiDureeMorceau;
@@ -62,6 +66,13 @@ public class Morceau implements java.lang.Cloneable, java.io.Serializable
             if(msNomMorceau != _r.msNomMorceau)
             {
                 if(msNomMorceau == null || _r.msNomMorceau == null || !msNomMorceau.equals(_r.msNomMorceau))
+                {
+                    return false;
+                }
+            }
+            if(msNomArtiste != _r.msNomArtiste)
+            {
+                if(msNomArtiste == null || _r.msNomArtiste == null || !msNomArtiste.equals(_r.msNomArtiste))
                 {
                     return false;
                 }
@@ -94,6 +105,7 @@ public class Morceau implements java.lang.Cloneable, java.io.Serializable
         int __h = 5381;
         __h = IceInternal.HashUtil.hashAdd(__h, "::biblAudio::Morceau");
         __h = IceInternal.HashUtil.hashAdd(__h, msNomMorceau);
+        __h = IceInternal.HashUtil.hashAdd(__h, msNomArtiste);
         __h = IceInternal.HashUtil.hashAdd(__h, msFichier);
         __h = IceInternal.HashUtil.hashAdd(__h, muiDateSortie);
         __h = IceInternal.HashUtil.hashAdd(__h, muiDureeMorceau);
@@ -119,6 +131,7 @@ public class Morceau implements java.lang.Cloneable, java.io.Serializable
     __write(IceInternal.BasicStream __os)
     {
         __os.writeString(msNomMorceau);
+        __os.writeString(msNomArtiste);
         __os.writeString(msFichier);
         __os.writeInt(muiDateSortie);
         __os.writeInt(muiDureeMorceau);
@@ -128,6 +141,7 @@ public class Morceau implements java.lang.Cloneable, java.io.Serializable
     __read(IceInternal.BasicStream __is)
     {
         msNomMorceau = __is.readString();
+        msNomArtiste = __is.readString();
         msFichier = __is.readString();
         muiDateSortie = __is.readInt();
         muiDureeMorceau = __is.readInt();
@@ -159,5 +173,5 @@ public class Morceau implements java.lang.Cloneable, java.io.Serializable
     
     private static final Morceau __nullMarshalValue = new Morceau();
 
-    public static final long serialVersionUID = 4364456256687275181L;
+    public static final long serialVersionUID = -8035954575323985260L;
 }
