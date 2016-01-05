@@ -1,20 +1,3 @@
-/*#include <iostream>
-#inyyclude "include/jBiblAudio.h"
-
-using namespace std;
-
-int main()
-{
-    BiblAudio b;
-    b.bAjoutMorceau("sdfsd", "sdfsdfs", "qqsdsqqqqsdfsdgggg",0,5);
-    b.bAjoutMorceau("ssazeaze", "sdfsdfs", "qqsdsqqqqsdfsdgggg",98,56);
-    b.bAjoutMorceau("ssazeaze", "ddfdg", "6516651g",0,5);
-    b.bAjoutMorceau("opômo", "sdfsdfs", "qqsdsqqqqsdfsdgggg",0,5);
-    b.bSuprMorceau("opômo");
-    b.afficherMorceaux();
-    return 0;
-}*/
- 
 #include <iostream>
 #include "include/jBiblAudio.h"
 #include <Ice/Ice.h>
@@ -23,20 +6,7 @@ int main()
 using namespace std;
 //using namespace Demo;
  
-/*class PrinterI : public Printer {
-public:
-    virtual void printString(const string& s, const Ice::Current&);
-};
- 
-void 
-PrinterI::
-printString(const string& s, const Ice::Current&)
-{
-    cout << s << endl;
-}*/
- 
-int
-main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
     int status = 0;
     Ice::CommunicatorPtr ic;

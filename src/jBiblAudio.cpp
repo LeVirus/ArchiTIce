@@ -20,12 +20,28 @@ biblAudio::Morceau BiblAudio::bRechercherMorceau( const std::string &sNomMusique
     return a;
 }
 
- biblAudio::mvectRecherche BiblAudio::getMorceaux( const std::string &sNomArtiste, const Ice::Current& )
+
+biblAudio::mvectRecherche BiblAudio::getMorceauxMorc( const std::string &sNomMorc, const Ice::Current& )
 {
     mvectRecherche.clear();
     for( biblAudio::mmapMorceaux::iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
     {
-	if( ( (*it) . second ).msNomMorceau == sNomArtiste )
+	if( ( (*it) . second ).msNomMorceau == sNomMorc )
+	{
+	    mvectRecherche.push_back( (*it) . second );
+	    //faire une fonction copie dans Morceau
+	}
+    }
+    return mvectRecherche;
+}
+
+
+biblAudio::mvectRecherche BiblAudio::getMorceauxArt( const std::string &sNomArtiste, const Ice::Current& )
+{
+    mvectRecherche.clear();
+    for( biblAudio::mmapMorceaux::iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
+    {
+	if( ( (*it) . second ).msNomArtiste == sNomArtiste )
 	{
 	    mvectRecherche.push_back( (*it) . second );
 	    //faire une fonction copie dans Morceau
@@ -48,7 +64,7 @@ void BiblAudio::afficherMorceaux(const Ice::Current&)
 bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sNomMorc, const  std::string &sFic,  int uiDureeMorc , int uiDateSortie, const Ice::Current&){
     biblAudio::Morceau morceau;
     morceau.msFichier = sFic;
-    //morceau.msNomArtiste = sNomMorc;
+    morceau.msNomArtiste = sNomMorc;
     morceau.msNomMorceau = sNomArt;
     morceau.muiDateSortie = uiDateSortie;
     morceau.muiDureeMorceau = uiDureeMorc;
@@ -56,8 +72,8 @@ bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sN
     return true;
 }
 
-bool BiblAudio::bSuprMorceau( const std::string &sNomMorc , const Ice::Current&){
-    /*std::map< std::string, Morceau >*/biblAudio::mmapMorceaux::iterator it;
+bool BiblAudio::bSuprMorceau( const std::string &sNomArt,const std::string &sNomMorc , const Ice::Current&){
+    biblAudio::mmapMorceaux::iterator it;
     it = mmapMorceaux.find( sNomMorc );
     if( it != mmapMorceaux.end() )
     {
@@ -69,55 +85,44 @@ bool BiblAudio::bSuprMorceau( const std::string &sNomMorc , const Ice::Current&)
 
 void BiblAudio::prepareSong()
 {
-//recherche de la piste à jouer
+    //recherche de la piste à jouer
     mediaVLC = libvlc_media_new_path (instVLC, pathToLemmy.c_str());
     //envoyer les informations au lecteur
     mediaPlayerVLC= libvlc_media_player_new_from_media (mediaVLC);
     //libérer le média
     libvlc_media_release (mediaVLC);
 }
-	void BiblAudio::TESTLireAudio()
-	{
-libvlc_media_player_play (mediaPlayerVLC);
-	}
-	void BiblAudio::TESTStopAudio()
-	{
-libvlc_media_player_stop (mediaPlayerVLC);
-	}
+void BiblAudio::TESTLireAudio()
+{
+    libvlc_media_player_play (mediaPlayerVLC);
+}
+void BiblAudio::TESTStopAudio()
+{
+    libvlc_media_player_stop (mediaPlayerVLC);
+}
+
+void BiblAudio::readSoundFic(const std::string &pathToFic,const Ice::Current&)
+{
+    pathToLemmy = pathToFic;
+prepareSong();
+    libvlc_media_player_play (mediaPlayerVLC);
+}
+
+void BiblAudio::readSound(const std::string &sNomMorceau,const std::string &sNomArtiste,const Ice::Current&)
+{
+mvectRecherche = getMorceauxArt( sNomArtiste );
+    pathToLemmy = pathToFic;
+prepareSong();
+    libvlc_media_player_play (mediaPlayerVLC);
+}
+
+void BiblAudio::stopSound(const Ice::Current&)
+{
+    if(mediaPlayerVLC)	    
+	libvlc_media_player_stop (mediaPlayerVLC);
+}
 
 BiblAudio::~BiblAudio(){
     libvlc_release (instVLC);
-libvlc_media_player_release (mediaPlayerVLC);
+    libvlc_media_player_release (mediaPlayerVLC);
 }
-/*
-   libvlc_instance_t * inst;
-   libvlc_media_player_t *mp;
-   libvlc_media_t *m;
- */
-/* Load the VLC engine */
-//inst = libvlc_new (0, NULL);
-
-/* Create a new item */
-//m = libvlc_media_new_location (inst, "http://mycool.movie.com/test.mov");
-//m = libvlc_media_new_path (inst, "/path/to/test.mov");
-
-/* Create a media player playing environement */
-//mp = libvlc_media_player_new_from_media (m);
-
-/* No need to keep the media now */
-/*libvlc_media_release (m);
-
-  play the media_player */
-//libvlc_media_player_play (mp);
-
-//sleep (10); /* Let it play a bit */
-
-/* Stop playing */
-//libvlc_media_player_stop (mp);
-
-/* Free the media_player */
-//libvlc_media_player_release (mp);
-
-/*libvlc_release (inst);
-
- */

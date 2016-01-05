@@ -18,8 +18,7 @@
 // </auto-generated>
 //
 
-//#include <../include/interface.h>
-#include "interface.h"
+#include <interface.h>
 #include <IceUtil/PushDisableWarnings.h>
 #include <Ice/LocalException.h>
 #include <Ice/ObjectFactory.h>
@@ -52,7 +51,15 @@ const ::std::string __biblAudio__ServeurIce__bAjoutMorceau_name = "bAjoutMorceau
 
 const ::std::string __biblAudio__ServeurIce__bSuprMorceau_name = "bSuprMorceau";
 
-const ::std::string __biblAudio__ServeurIce__getMorceaux_name = "getMorceaux";
+const ::std::string __biblAudio__ServeurIce__getMorceauxArt_name = "getMorceauxArt";
+
+const ::std::string __biblAudio__ServeurIce__getMorceauxMorc_name = "getMorceauxMorc";
+
+const ::std::string __biblAudio__ServeurIce__stopSound_name = "stopSound";
+
+const ::std::string __biblAudio__ServeurIce__readSoundFic_name = "readSoundFic";
+
+const ::std::string __biblAudio__ServeurIce__readSound_name = "readSound";
 
 }
 
@@ -355,7 +362,7 @@ IceProxy::biblAudio::ServeurIce::end_bAjoutMorceau(const ::Ice::AsyncResultPtr& 
 }
 
 bool
-IceProxy::biblAudio::ServeurIce::bSuprMorceau(const ::std::string& __p_sNomMorc, const ::Ice::Context* __ctx)
+IceProxy::biblAudio::ServeurIce::bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx)
 {
     __checkTwowayOnly(__biblAudio__ServeurIce__bSuprMorceau_name);
     ::IceInternal::Outgoing __og(this, __biblAudio__ServeurIce__bSuprMorceau_name, ::Ice::Normal, __ctx);
@@ -363,6 +370,7 @@ IceProxy::biblAudio::ServeurIce::bSuprMorceau(const ::std::string& __p_sNomMorc,
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
         __os->write(__p_sNomMorc);
+        __os->write(__p_sNomArt);
         __og.endWriteParams();
     }
     catch(const ::Ice::LocalException& __ex)
@@ -389,7 +397,7 @@ IceProxy::biblAudio::ServeurIce::bSuprMorceau(const ::std::string& __p_sNomMorc,
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::biblAudio::ServeurIce::begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::biblAudio::ServeurIce::begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
     __checkAsyncTwowayOnly(__biblAudio__ServeurIce__bSuprMorceau_name);
     ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __biblAudio__ServeurIce__bSuprMorceau_name, __del, __cookie);
@@ -398,6 +406,7 @@ IceProxy::biblAudio::ServeurIce::begin_bSuprMorceau(const ::std::string& __p_sNo
         __result->prepare(__biblAudio__ServeurIce__bSuprMorceau_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->startWriteParams(::Ice::DefaultFormat);
         __os->write(__p_sNomMorc);
+        __os->write(__p_sNomArt);
         __result->endWriteParams();
         __result->invoke();
     }
@@ -411,7 +420,7 @@ IceProxy::biblAudio::ServeurIce::begin_bSuprMorceau(const ::std::string& __p_sNo
 #ifdef ICE_CPP11
 
 ::Ice::AsyncResultPtr
-IceProxy::biblAudio::ServeurIce::__begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
+IceProxy::biblAudio::ServeurIce::__begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
 {
     class Cpp11CB : public ::IceInternal::Cpp11FnCallbackNC
     {
@@ -447,7 +456,7 @@ IceProxy::biblAudio::ServeurIce::__begin_bSuprMorceau(const ::std::string& __p_s
         
         ::std::function<void (bool)> _response;
     };
-    return begin_bSuprMorceau(__p_sNomMorc, __ctx, new Cpp11CB(__response, __exception, __sent));
+    return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, __ctx, new Cpp11CB(__response, __exception, __sent));
 }
 #endif
 
@@ -474,10 +483,10 @@ IceProxy::biblAudio::ServeurIce::end_bSuprMorceau(const ::Ice::AsyncResultPtr& _
 }
 
 ::biblAudio::mvectRecherche
-IceProxy::biblAudio::ServeurIce::getMorceaux(const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx)
+IceProxy::biblAudio::ServeurIce::getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx)
 {
-    __checkTwowayOnly(__biblAudio__ServeurIce__getMorceaux_name);
-    ::IceInternal::Outgoing __og(this, __biblAudio__ServeurIce__getMorceaux_name, ::Ice::Normal, __ctx);
+    __checkTwowayOnly(__biblAudio__ServeurIce__getMorceauxArt_name);
+    ::IceInternal::Outgoing __og(this, __biblAudio__ServeurIce__getMorceauxArt_name, ::Ice::Normal, __ctx);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
@@ -508,13 +517,13 @@ IceProxy::biblAudio::ServeurIce::getMorceaux(const ::std::string& __p_sNomArt, c
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::biblAudio::ServeurIce::begin_getMorceaux(const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::biblAudio::ServeurIce::begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    __checkAsyncTwowayOnly(__biblAudio__ServeurIce__getMorceaux_name);
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __biblAudio__ServeurIce__getMorceaux_name, __del, __cookie);
+    __checkAsyncTwowayOnly(__biblAudio__ServeurIce__getMorceauxArt_name);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __biblAudio__ServeurIce__getMorceauxArt_name, __del, __cookie);
     try
     {
-        __result->prepare(__biblAudio__ServeurIce__getMorceaux_name, ::Ice::Normal, __ctx);
+        __result->prepare(__biblAudio__ServeurIce__getMorceauxArt_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->startWriteParams(::Ice::DefaultFormat);
         __os->write(__p_sNomArt);
         __result->endWriteParams();
@@ -530,7 +539,7 @@ IceProxy::biblAudio::ServeurIce::begin_getMorceaux(const ::std::string& __p_sNom
 #ifdef ICE_CPP11
 
 ::Ice::AsyncResultPtr
-IceProxy::biblAudio::ServeurIce::__begin_getMorceaux(const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
+IceProxy::biblAudio::ServeurIce::__begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
 {
     class Cpp11CB : public ::IceInternal::Cpp11FnCallbackNC
     {
@@ -549,7 +558,7 @@ IceProxy::biblAudio::ServeurIce::__begin_getMorceaux(const ::std::string& __p_sN
             ::biblAudio::mvectRecherche __ret;
             try
             {
-                __ret = __proxy->end_getMorceaux(__result);
+                __ret = __proxy->end_getMorceauxArt(__result);
             }
             catch(const ::Ice::Exception& ex)
             {
@@ -566,14 +575,14 @@ IceProxy::biblAudio::ServeurIce::__begin_getMorceaux(const ::std::string& __p_sN
         
         ::std::function<void (const ::biblAudio::mvectRecherche&)> _response;
     };
-    return begin_getMorceaux(__p_sNomArt, __ctx, new Cpp11CB(__response, __exception, __sent));
+    return begin_getMorceauxArt(__p_sNomArt, __ctx, new Cpp11CB(__response, __exception, __sent));
 }
 #endif
 
 ::biblAudio::mvectRecherche
-IceProxy::biblAudio::ServeurIce::end_getMorceaux(const ::Ice::AsyncResultPtr& __result)
+IceProxy::biblAudio::ServeurIce::end_getMorceauxArt(const ::Ice::AsyncResultPtr& __result)
 {
-    ::Ice::AsyncResult::__check(__result, this, __biblAudio__ServeurIce__getMorceaux_name);
+    ::Ice::AsyncResult::__check(__result, this, __biblAudio__ServeurIce__getMorceauxArt_name);
     ::biblAudio::mvectRecherche __ret;
     if(!__result->__wait())
     {
@@ -590,6 +599,242 @@ IceProxy::biblAudio::ServeurIce::end_getMorceaux(const ::Ice::AsyncResultPtr& __
     __is->read(__ret);
     __result->__endReadParams();
     return __ret;
+}
+
+::biblAudio::mvectRecherche
+IceProxy::biblAudio::ServeurIce::getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context* __ctx)
+{
+    __checkTwowayOnly(__biblAudio__ServeurIce__getMorceauxMorc_name);
+    ::IceInternal::Outgoing __og(this, __biblAudio__ServeurIce__getMorceauxMorc_name, ::Ice::Normal, __ctx);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(__p_sNomMorc);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    if(!__og.invoke())
+    {
+        try
+        {
+            __og.throwUserException();
+        }
+        catch(const ::Ice::UserException& __ex)
+        {
+            ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+            throw __uue;
+        }
+    }
+    ::biblAudio::mvectRecherche __ret;
+    ::IceInternal::BasicStream* __is = __og.startReadParams();
+    __is->read(__ret);
+    __og.endReadParams();
+    return __ret;
+}
+
+::Ice::AsyncResultPtr
+IceProxy::biblAudio::ServeurIce::begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    __checkAsyncTwowayOnly(__biblAudio__ServeurIce__getMorceauxMorc_name);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __biblAudio__ServeurIce__getMorceauxMorc_name, __del, __cookie);
+    try
+    {
+        __result->prepare(__biblAudio__ServeurIce__getMorceauxMorc_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->startWriteParams(::Ice::DefaultFormat);
+        __os->write(__p_sNomMorc);
+        __result->endWriteParams();
+        __result->invoke();
+    }
+    catch(const ::Ice::Exception& __ex)
+    {
+        __result->abort(__ex);
+    }
+    return __result;
+}
+
+#ifdef ICE_CPP11
+
+::Ice::AsyncResultPtr
+IceProxy::biblAudio::ServeurIce::__begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
+{
+    class Cpp11CB : public ::IceInternal::Cpp11FnCallbackNC
+    {
+    public:
+
+        Cpp11CB(const ::std::function<void (const ::biblAudio::mvectRecherche&)>& responseFunc, const ::std::function<void (const ::Ice::Exception&)>& exceptionFunc, const ::std::function<void (bool)>& sentFunc) :
+            ::IceInternal::Cpp11FnCallbackNC(exceptionFunc, sentFunc),
+            _response(responseFunc)
+        {
+            CallbackBase::checkCallback(true, responseFunc || exceptionFunc != nullptr);
+        }
+
+        virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+        {
+            ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+            ::biblAudio::mvectRecherche __ret;
+            try
+            {
+                __ret = __proxy->end_getMorceauxMorc(__result);
+            }
+            catch(const ::Ice::Exception& ex)
+            {
+                Cpp11FnCallbackNC::exception(__result, ex);
+                return;
+            }
+            if(_response != nullptr)
+            {
+                _response(__ret);
+            }
+        }
+    
+    private:
+        
+        ::std::function<void (const ::biblAudio::mvectRecherche&)> _response;
+    };
+    return begin_getMorceauxMorc(__p_sNomMorc, __ctx, new Cpp11CB(__response, __exception, __sent));
+}
+#endif
+
+::biblAudio::mvectRecherche
+IceProxy::biblAudio::ServeurIce::end_getMorceauxMorc(const ::Ice::AsyncResultPtr& __result)
+{
+    ::Ice::AsyncResult::__check(__result, this, __biblAudio__ServeurIce__getMorceauxMorc_name);
+    ::biblAudio::mvectRecherche __ret;
+    if(!__result->__wait())
+    {
+        try
+        {
+            __result->__throwUserException();
+        }
+        catch(const ::Ice::UserException& __ex)
+        {
+            throw ::Ice::UnknownUserException(__FILE__, __LINE__, __ex.ice_name());
+        }
+    }
+    ::IceInternal::BasicStream* __is = __result->__startReadParams();
+    __is->read(__ret);
+    __result->__endReadParams();
+    return __ret;
+}
+
+void
+IceProxy::biblAudio::ServeurIce::stopSound(const ::Ice::Context* __ctx)
+{
+    ::IceInternal::Outgoing __og(this, __biblAudio__ServeurIce__stopSound_name, ::Ice::Normal, __ctx);
+    __og.writeEmptyParams();
+    __invoke(__og);
+}
+
+::Ice::AsyncResultPtr
+IceProxy::biblAudio::ServeurIce::begin_stopSound(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __biblAudio__ServeurIce__stopSound_name, __del, __cookie);
+    try
+    {
+        __result->prepare(__biblAudio__ServeurIce__stopSound_name, ::Ice::Normal, __ctx);
+        __result->writeEmptyParams();
+        __result->invoke();
+    }
+    catch(const ::Ice::Exception& __ex)
+    {
+        __result->abort(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::biblAudio::ServeurIce::end_stopSound(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __biblAudio__ServeurIce__stopSound_name);
+}
+
+void
+IceProxy::biblAudio::ServeurIce::readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::Outgoing __og(this, __biblAudio__ServeurIce__readSoundFic_name, ::Ice::Normal, __ctx);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(__p_pathToFic);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    __invoke(__og);
+}
+
+::Ice::AsyncResultPtr
+IceProxy::biblAudio::ServeurIce::begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __biblAudio__ServeurIce__readSoundFic_name, __del, __cookie);
+    try
+    {
+        __result->prepare(__biblAudio__ServeurIce__readSoundFic_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->startWriteParams(::Ice::DefaultFormat);
+        __os->write(__p_pathToFic);
+        __result->endWriteParams();
+        __result->invoke();
+    }
+    catch(const ::Ice::Exception& __ex)
+    {
+        __result->abort(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::biblAudio::ServeurIce::end_readSoundFic(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __biblAudio__ServeurIce__readSoundFic_name);
+}
+
+void
+IceProxy::biblAudio::ServeurIce::readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::Outgoing __og(this, __biblAudio__ServeurIce__readSound_name, ::Ice::Normal, __ctx);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(__p_sNomMorceau);
+        __os->write(__p_sNomArtiste);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    __invoke(__og);
+}
+
+::Ice::AsyncResultPtr
+IceProxy::biblAudio::ServeurIce::begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __biblAudio__ServeurIce__readSound_name, __del, __cookie);
+    try
+    {
+        __result->prepare(__biblAudio__ServeurIce__readSound_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->startWriteParams(::Ice::DefaultFormat);
+        __os->write(__p_sNomMorceau);
+        __os->write(__p_sNomArtiste);
+        __result->endWriteParams();
+        __result->invoke();
+    }
+    catch(const ::Ice::Exception& __ex)
+    {
+        __result->abort(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::biblAudio::ServeurIce::end_readSound(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __biblAudio__ServeurIce__readSound_name);
 }
 
 const ::std::string&
@@ -699,9 +944,11 @@ biblAudio::ServeurIce::___bSuprMorceau(::IceInternal::Incoming& __inS, const ::I
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
     ::std::string __p_sNomMorc;
+    ::std::string __p_sNomArt;
     __is->read(__p_sNomMorc);
+    __is->read(__p_sNomArt);
     __inS.endReadParams();
-    bool __ret = bSuprMorceau(__p_sNomMorc, __current);
+    bool __ret = bSuprMorceau(__p_sNomMorc, __p_sNomArt, __current);
     ::IceInternal::BasicStream* __os = __inS.__startWriteParams(::Ice::DefaultFormat);
     __os->write(__ret);
     __inS.__endWriteParams(true);
@@ -709,17 +956,70 @@ biblAudio::ServeurIce::___bSuprMorceau(::IceInternal::Incoming& __inS, const ::I
 }
 
 ::Ice::DispatchStatus
-biblAudio::ServeurIce::___getMorceaux(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+biblAudio::ServeurIce::___getMorceauxArt(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
     ::std::string __p_sNomArt;
     __is->read(__p_sNomArt);
     __inS.endReadParams();
-    ::biblAudio::mvectRecherche __ret = getMorceaux(__p_sNomArt, __current);
+    ::biblAudio::mvectRecherche __ret = getMorceauxArt(__p_sNomArt, __current);
     ::IceInternal::BasicStream* __os = __inS.__startWriteParams(::Ice::DefaultFormat);
     __os->write(__ret);
     __inS.__endWriteParams(true);
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+biblAudio::ServeurIce::___getMorceauxMorc(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::std::string __p_sNomMorc;
+    __is->read(__p_sNomMorc);
+    __inS.endReadParams();
+    ::biblAudio::mvectRecherche __ret = getMorceauxMorc(__p_sNomMorc, __current);
+    ::IceInternal::BasicStream* __os = __inS.__startWriteParams(::Ice::DefaultFormat);
+    __os->write(__ret);
+    __inS.__endWriteParams(true);
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+biblAudio::ServeurIce::___stopSound(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    __inS.readEmptyParams();
+    stopSound(__current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+biblAudio::ServeurIce::___readSoundFic(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::std::string __p_pathToFic;
+    __is->read(__p_pathToFic);
+    __inS.endReadParams();
+    readSoundFic(__p_pathToFic, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+biblAudio::ServeurIce::___readSound(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::std::string __p_sNomMorceau;
+    ::std::string __p_sNomArtiste;
+    __is->read(__p_sNomMorceau);
+    __is->read(__p_sNomArtiste);
+    __inS.endReadParams();
+    readSound(__p_sNomMorceau, __p_sNomArtiste, __current);
+    __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
 
@@ -731,11 +1031,15 @@ const ::std::string __biblAudio__ServeurIce_all[] =
     "bAjoutMorceau",
     "bRechercherMorceau",
     "bSuprMorceau",
-    "getMorceaux",
+    "getMorceauxArt",
+    "getMorceauxMorc",
     "ice_id",
     "ice_ids",
     "ice_isA",
-    "ice_ping"
+    "ice_ping",
+    "readSound",
+    "readSoundFic",
+    "stopSound"
 };
 
 }
@@ -743,7 +1047,7 @@ const ::std::string __biblAudio__ServeurIce_all[] =
 ::Ice::DispatchStatus
 biblAudio::ServeurIce::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
 {
-    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__biblAudio__ServeurIce_all, __biblAudio__ServeurIce_all + 9, current.operation);
+    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__biblAudio__ServeurIce_all, __biblAudio__ServeurIce_all + 13, current.operation);
     if(r.first == r.second)
     {
         throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
@@ -769,23 +1073,39 @@ biblAudio::ServeurIce::__dispatch(::IceInternal::Incoming& in, const ::Ice::Curr
         }
         case 4:
         {
-            return ___getMorceaux(in, current);
+            return ___getMorceauxArt(in, current);
         }
         case 5:
         {
-            return ___ice_id(in, current);
+            return ___getMorceauxMorc(in, current);
         }
         case 6:
         {
-            return ___ice_ids(in, current);
+            return ___ice_id(in, current);
         }
         case 7:
         {
-            return ___ice_isA(in, current);
+            return ___ice_ids(in, current);
         }
         case 8:
         {
+            return ___ice_isA(in, current);
+        }
+        case 9:
+        {
             return ___ice_ping(in, current);
+        }
+        case 10:
+        {
+            return ___readSound(in, current);
+        }
+        case 11:
+        {
+            return ___readSoundFic(in, current);
+        }
+        case 12:
+        {
+            return ___stopSound(in, current);
         }
     }
 
