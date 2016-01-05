@@ -25,7 +25,7 @@ class BiblAudio : public  biblAudio :: ServeurIce
 	std::string pathToLemmy;
     public:
 	BiblAudio();
-	/*std::vector< Morceau >*/biblAudio::mvectRecherche getMorceaux( const std::string &sNomArtiste, const Ice::Current& );
+	biblAudio::mvectRecherche getMorceaux( const std::string &sNomArtiste, const Ice::Current& );
 	void afficherMorceaux(const Ice::Current&);
 
 	biblAudio::Morceau bRechercherMorceau(const std::string &sNomMusique, const Ice::Current&);

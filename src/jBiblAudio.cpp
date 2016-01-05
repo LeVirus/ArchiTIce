@@ -20,10 +20,10 @@ biblAudio::Morceau BiblAudio::bRechercherMorceau( const std::string &sNomMusique
     return a;
 }
 
-/*std::vector< Morceau>*/ biblAudio::mvectRecherche BiblAudio::getMorceaux( const std::string &sNomArtiste, const Ice::Current& )
+ biblAudio::mvectRecherche BiblAudio::getMorceaux( const std::string &sNomArtiste, const Ice::Current& )
 {
     mvectRecherche.clear();
-    for( /*std::map< std::string, Morceau >*/biblAudio::mmapMorceaux::iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
+    for( biblAudio::mmapMorceaux::iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
     {
 	if( ( (*it) . second ).msNomMorceau == sNomArtiste )
 	{
@@ -37,7 +37,7 @@ biblAudio::Morceau BiblAudio::bRechercherMorceau( const std::string &sNomMusique
 
 void BiblAudio::afficherMorceaux(const Ice::Current&)
 {
-    for( /*std::map< std::string, Morceau >*/biblAudio::mmapMorceaux::const_iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
+    for( biblAudio::mmapMorceaux::const_iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
     {
 	std::cout << (*it) .first <<"\n";
     }
@@ -48,6 +48,7 @@ void BiblAudio::afficherMorceaux(const Ice::Current&)
 bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sNomMorc, const  std::string &sFic,  int uiDureeMorc , int uiDateSortie, const Ice::Current&){
     biblAudio::Morceau morceau;
     morceau.msFichier = sFic;
+    //morceau.msNomArtiste = sNomMorc;
     morceau.msNomMorceau = sNomArt;
     morceau.muiDateSortie = uiDateSortie;
     morceau.muiDureeMorceau = uiDureeMorc;
