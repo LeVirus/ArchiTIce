@@ -29,7 +29,6 @@ biblAudio::mvectRecherche BiblAudio::getMorceauxMorc( const std::string &sNomMor
 	if( ( (*it) . second ).msNomMorceau == sNomMorc )
 	{
 	    mvectRecherche.push_back( (*it) . second );
-	    //faire une fonction copie dans Morceau
 	}
     }
     return mvectRecherche;
@@ -44,7 +43,6 @@ biblAudio::mvectRecherche BiblAudio::getMorceauxArt( const std::string &sNomArti
 	if( ( (*it) . second ).msNomArtiste == sNomArtiste )
 	{
 	    mvectRecherche.push_back( (*it) . second );
-	    //faire une fonction copie dans Morceau
 	}
     }
     return mvectRecherche;
@@ -59,8 +57,6 @@ void BiblAudio::afficherMorceaux(const Ice::Current&)
     }
 }
 
-/*erreur dans les parametres nomMorceau non traiter
-  regenerer l'interface a l'inclusion vlc*/
 bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sNomMorc, const  std::string &sFic,  int uiDureeMorc , int uiDateSortie, const Ice::Current&){
     biblAudio::Morceau morceau;
     morceau.msFichier = sFic;
@@ -75,10 +71,13 @@ bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sN
 bool BiblAudio::bSuprMorceau( const std::string &sNomArt,const std::string &sNomMorc , const Ice::Current&){
     biblAudio::mmapMorceaux::iterator it;
     it = mmapMorceaux.find( sNomMorc );
-    if( it != mmapMorceaux.end() )
-    {
-	mmapMorceaux.erase(it);
-	return true;
+
+    for( biblAudio::mmapMorceaux::iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it ){
+	if((*it).first == sNomMorc && (*it).second.msNomArtiste == sNomArt)
+	{
+	    mmapMorceaux.erase(it);
+	    return true;
+	}
     }
     return false;
 }
@@ -92,28 +91,34 @@ void BiblAudio::prepareSong()
     //libérer le média
     libvlc_media_release (mediaVLC);
 }
-void BiblAudio::TESTLireAudio()
-{
-    libvlc_media_player_play (mediaPlayerVLC);
-}
-void BiblAudio::TESTStopAudio()
-{
-    libvlc_media_player_stop (mediaPlayerVLC);
-}
 
 void BiblAudio::readSoundFic(const std::string &pathToFic,const Ice::Current&)
 {
     pathToLemmy = pathToFic;
-prepareSong();
+    prepareSong();
     libvlc_media_player_play (mediaPlayerVLC);
 }
 
-void BiblAudio::readSound(const std::string &sNomMorceau,const std::string &sNomArtiste,const Ice::Current&)
+void BiblAudio::readSound(const std::string &sNomMorceau,const std::string &sNomArtiste,const Ice::Current& iceCurrent)
 {
-mvectRecherche = getMorceauxArt( sNomArtiste );
-    pathToLemmy = pathToFic;
-prepareSong();
+    mvectRecherche = getMorceauxArt( sNomArtiste, iceCurrent );
+    biblAudio::Morceau morc = rechercherMorceauVect( mvectRecherche , sNomMorceau);
+    if(morc.msNomMorceau == "erreur")return; 
+    pathToLemmy = morc.msFichier;
+    prepareSong();
     libvlc_media_player_play (mediaPlayerVLC);
+}
+
+biblAudio::Morceau BiblAudio::rechercherMorceauVect( biblAudio::mvectRecherche mvectMorc,const std::string &nomMorc )
+{
+    for(unsigned int i = 0;i<mvectMorc.size();i++)
+    {
+	if(mvectMorc[i].msNomMorceau == nomMorc)
+	    return mvectMorc[i];
+    }
+    biblAudio::Morceau a;
+    a.msNomMorceau = "erreur";
+    return a;
 }
 
 void BiblAudio::stopSound(const Ice::Current&)

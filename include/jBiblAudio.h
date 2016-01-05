@@ -26,6 +26,7 @@ class BiblAudio : public  biblAudio :: ServeurIce
     public:
 	BiblAudio();
 	biblAudio::mvectRecherche getMorceauxArt( const std::string &sNomArtiste, const Ice::Current& );
+	biblAudio::Morceau rechercherMorceauVect( biblAudio::mvectRecherche mvectMorc,const std::string &nomMorc ); 
 	biblAudio::mvectRecherche getMorceauxMorc( const std::string &sNomMorc, const Ice::Current& );
 	void afficherMorceaux(const Ice::Current&);
 	void stopSound(const Ice::Current&);
@@ -37,8 +38,6 @@ class BiblAudio : public  biblAudio :: ServeurIce
 	void readSoundFic(const std::string &pathToFic,const Ice::Current&);
 	void readSound(const std::string &sNomMorceau,const std::string &sNomArtiste,const Ice::Current&);
 	void prepareSong();
-	void TESTLireAudio();
-	void TESTStopAudio();
 	~BiblAudio();
 };
 
