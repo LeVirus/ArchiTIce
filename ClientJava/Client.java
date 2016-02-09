@@ -8,7 +8,7 @@ public class Client {
 	    Ice.Communicator ic = null;
 	    try {
 		ic = Ice.Util.initialize(args);
-		Ice.ObjectPrx base = ic.stringToProxy("SimplePrinter:default -p 10000");
+		Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");
 		biblAudio.ServeurIcePrx printer = biblAudio.ServeurIcePrxHelper.checkedCast(base);
 		if (printer == null)
 		    throw new Error("Invalid proxy");
@@ -70,6 +70,7 @@ public class Client {
 			    System.out.println("Jouer morceau par fichier.");
 			    System.out.println("Entrer le chemin d'acces au fichier.");
 			    String nac = scan.nextLine();
+			     nac = scan.nextLine();
 			    printer.readSoundFic(nac);
 			    break;
 			case 7:
@@ -92,7 +93,7 @@ public class Client {
 			    System.out.println("Erreur commande.");
 			    break;
 		    }
-		}while( finall );
+		}while( !finall );
 
 
 	    } catch (Ice.LocalException e) {
