@@ -6,12 +6,15 @@
 #include <vector>
 #include "vlc/vlc.h"
 #include "../include/interface.h"
+#include "../include/IceStorm/IceStorm.h"
+#include "../include/IceUtil/Monitor.h"
 
 
 struct Morceau
 {
     std::string msNomArtiste, msFichier;
     int muiDureeMorceau, muiDateSortie;
+    MonitorPrx monitor;
 };
 
 class BiblAudio : public  biblAudio :: ServeurIce

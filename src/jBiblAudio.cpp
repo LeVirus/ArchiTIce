@@ -2,8 +2,37 @@
 #include <iostream>
 
 BiblAudio::BiblAudio(){
+
+    Ice::CommunicatorPtr ic;
+            try {
+                    ic = Ice::initialize();
+                    Ice::ObjectPrx obj = ic->stringToProxy("IceStorm/TopicManager:tcp -p 9999");
+                    IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast(obj);
+                    IceStorm::TopicPrx topic;
+                    while (!topic) {
+                            try {
+                                    topic = topicManager->retrieve("StreamPlayerNotifs");
+                                    std::cout << "Retrieving topic...\n";
+                            } catch (const IceStorm::NoSuchTopic&) {
+                                    std::cout << "No topic!\n";
+                                    try {
+                                            topic = topicManager->create("StreamPlayerNotifs");
+                                            std::cout << "Creating topic...\n";
+                                    } catch(const IceStorm::TopicExists&) {
+                                    }
+                            }
+                    }
+                    std::cout << "Topic active!\n";
+                    Ice::ObjectPrx pub = topic->getPublisher()->ice_twoway();
+                    monitor = MonitorPrx::uncheckedCast(pub);
+                    std::cout << "Monitor active!\n";
+            } catch (const Ice::Exception& e) {
+                    std::cerr << e << '\n';
+            }
+
     instVLC = libvlc_new (0, NULL);
     pathToLemmy="../music/Lemmy.mp3";
+
 }
 
 

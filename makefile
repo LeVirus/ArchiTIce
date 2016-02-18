@@ -5,7 +5,7 @@ else
 	CXXFLAGS=-std=c++98 -march=native -O2
 endif
 
-LDFLAGS= -pthread -lIce -lIceUtil -lvlc    
+LDFLAGS= -pthread -lIce -lIceUtil -lIceStorm -lvlc    
 CXX= g++
 OBJ_DIR=obj/
 SRC_DIR=src/
