@@ -1,5 +1,7 @@
 #include "../include/jBiblAudio.h"
 #include <iostream>
+#include <Ice/Ice.h>
+
 
 BiblAudio::BiblAudio(){
 

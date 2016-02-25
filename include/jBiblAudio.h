@@ -14,7 +14,7 @@ struct Morceau
 {
     std::string msNomArtiste, msFichier;
     int muiDureeMorceau, muiDateSortie;
-    MonitorPrx monitor;
+    IceUtil::MonitorPrx monitor;
 };
 
 class BiblAudio : public  biblAudio :: ServeurIce
