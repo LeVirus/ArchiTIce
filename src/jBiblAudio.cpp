@@ -6,7 +6,7 @@
 BiblAudio::BiblAudio(){
 
     Ice::CommunicatorPtr ic;
-            try {
+            /*try {
                     ic = Ice::initialize();
                     Ice::ObjectPrx obj = ic->stringToProxy("IceStorm/TopicManager:tcp -p 9999");
                     IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast(obj);
@@ -26,11 +26,11 @@ BiblAudio::BiblAudio(){
                     }
                     std::cout << "Topic active!\n";
                     Ice::ObjectPrx pub = topic->getPublisher()->ice_twoway();
-                    monitor = MonitorPrx::uncheckedCast(pub);
+                    monitor = Monitor ::uncheckedCast(pub);
                     std::cout << "Monitor active!\n";
             } catch (const Ice::Exception& e) {
                     std::cerr << e << '\n';
-            }
+            }*/
 
     instVLC = libvlc_new (0, NULL);
     pathToLemmy="../music/Lemmy.mp3";

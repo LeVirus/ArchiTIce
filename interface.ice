@@ -27,6 +27,6 @@ module biblAudio
     };
 
     interface Monitor {
-	void report(string action, Song s);
+	void report(string action, Morceau morceau);
     };
 };

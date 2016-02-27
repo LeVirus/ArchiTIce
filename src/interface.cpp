@@ -61,6 +61,8 @@ const ::std::string __biblAudio__ServeurIce__readSoundFic_name = "readSoundFic";
 
 const ::std::string __biblAudio__ServeurIce__readSound_name = "readSound";
 
+const ::std::string __biblAudio__Monitor__report_name = "report";
+
 }
 
 namespace Ice
@@ -848,6 +850,79 @@ IceProxy::biblAudio::ServeurIce::__newInstance() const
 {
     return new ServeurIce;
 }
+::IceProxy::Ice::Object* ::IceProxy::biblAudio::upCast(::IceProxy::biblAudio::Monitor* p) { return p; }
+
+void
+::IceProxy::biblAudio::__read(::IceInternal::BasicStream* __is, ::IceInternal::ProxyHandle< ::IceProxy::biblAudio::Monitor>& v)
+{
+    ::Ice::ObjectPrx proxy;
+    __is->read(proxy);
+    if(!proxy)
+    {
+        v = 0;
+    }
+    else
+    {
+        v = new ::IceProxy::biblAudio::Monitor;
+        v->__copyFrom(proxy);
+    }
+}
+
+void
+IceProxy::biblAudio::Monitor::report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::Outgoing __og(this, __biblAudio__Monitor__report_name, ::Ice::Normal, __ctx);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(__p_action);
+        __os->write(__p_morceau);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    __invoke(__og);
+}
+
+::Ice::AsyncResultPtr
+IceProxy::biblAudio::Monitor::begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __biblAudio__Monitor__report_name, __del, __cookie);
+    try
+    {
+        __result->prepare(__biblAudio__Monitor__report_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->startWriteParams(::Ice::DefaultFormat);
+        __os->write(__p_action);
+        __os->write(__p_morceau);
+        __result->endWriteParams();
+        __result->invoke();
+    }
+    catch(const ::Ice::Exception& __ex)
+    {
+        __result->abort(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::biblAudio::Monitor::end_report(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __biblAudio__Monitor__report_name);
+}
+
+const ::std::string&
+IceProxy::biblAudio::Monitor::ice_staticId()
+{
+    return ::biblAudio::Monitor::ice_staticId();
+}
+
+::IceProxy::Ice::Object*
+IceProxy::biblAudio::Monitor::__newInstance() const
+{
+    return new Monitor;
+}
 
 ::Ice::Object* biblAudio::upCast(::biblAudio::ServeurIce* p) { return p; }
 
@@ -1134,5 +1209,135 @@ biblAudio::__patch(ServeurIcePtr& handle, const ::Ice::ObjectPtr& v)
     if(v && !handle)
     {
         IceInternal::Ex::throwUOE(::biblAudio::ServeurIce::ice_staticId(), v);
+    }
+}
+
+::Ice::Object* biblAudio::upCast(::biblAudio::Monitor* p) { return p; }
+
+namespace
+{
+const ::std::string __biblAudio__Monitor_ids[2] =
+{
+    "::Ice::Object",
+    "::biblAudio::Monitor"
+};
+
+}
+
+bool
+biblAudio::Monitor::ice_isA(const ::std::string& _s, const ::Ice::Current&) const
+{
+    return ::std::binary_search(__biblAudio__Monitor_ids, __biblAudio__Monitor_ids + 2, _s);
+}
+
+::std::vector< ::std::string>
+biblAudio::Monitor::ice_ids(const ::Ice::Current&) const
+{
+    return ::std::vector< ::std::string>(&__biblAudio__Monitor_ids[0], &__biblAudio__Monitor_ids[2]);
+}
+
+const ::std::string&
+biblAudio::Monitor::ice_id(const ::Ice::Current&) const
+{
+    return __biblAudio__Monitor_ids[1];
+}
+
+const ::std::string&
+biblAudio::Monitor::ice_staticId()
+{
+#ifdef ICE_HAS_THREAD_SAFE_LOCAL_STATIC
+    static const ::std::string typeId = "::biblAudio::Monitor";
+    return typeId;
+#else
+    return __biblAudio__Monitor_ids[1];
+#endif
+}
+
+::Ice::DispatchStatus
+biblAudio::Monitor::___report(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::std::string __p_action;
+    ::biblAudio::Morceau __p_morceau;
+    __is->read(__p_action);
+    __is->read(__p_morceau);
+    __inS.endReadParams();
+    report(__p_action, __p_morceau, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+namespace
+{
+const ::std::string __biblAudio__Monitor_all[] =
+{
+    "ice_id",
+    "ice_ids",
+    "ice_isA",
+    "ice_ping",
+    "report"
+};
+
+}
+
+::Ice::DispatchStatus
+biblAudio::Monitor::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
+{
+    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__biblAudio__Monitor_all, __biblAudio__Monitor_all + 5, current.operation);
+    if(r.first == r.second)
+    {
+        throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
+    }
+
+    switch(r.first - __biblAudio__Monitor_all)
+    {
+        case 0:
+        {
+            return ___ice_id(in, current);
+        }
+        case 1:
+        {
+            return ___ice_ids(in, current);
+        }
+        case 2:
+        {
+            return ___ice_isA(in, current);
+        }
+        case 3:
+        {
+            return ___ice_ping(in, current);
+        }
+        case 4:
+        {
+            return ___report(in, current);
+        }
+    }
+
+    assert(false);
+    throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
+}
+
+void
+biblAudio::Monitor::__writeImpl(::IceInternal::BasicStream* __os) const
+{
+    __os->startWriteSlice(ice_staticId(), -1, true);
+    __os->endWriteSlice();
+}
+
+void
+biblAudio::Monitor::__readImpl(::IceInternal::BasicStream* __is)
+{
+    __is->startReadSlice();
+    __is->endReadSlice();
+}
+
+void 
+biblAudio::__patch(MonitorPtr& handle, const ::Ice::ObjectPtr& v)
+{
+    handle = ::biblAudio::MonitorPtr::dynamicCast(v);
+    if(v && !handle)
+    {
+        IceInternal::Ex::throwUOE(::biblAudio::Monitor::ice_staticId(), v);
     }
 }
