@@ -8,7 +8,7 @@ public class Client {
 	    Ice.Communicator ic = null;
 	    try {
 		ic = Ice.Util.initialize(args);
-		Ice.ObjectPrx base = ic.stringToProxy("MetaServer:default -p 10001");
+                Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");
 		biblAudio.ServeurIcePrx printer = biblAudio.ServeurIcePrxHelper.checkedCast(base);
 		if (printer == null)
 		    throw new Error("Invalid proxy");
@@ -34,7 +34,8 @@ public class Client {
 
 			    System.out.println("Artiste?");
 			    String na = scan.nextLine();
-			    System.out.println("Nom morceau?");
+                            na = scan.nextLine();
+                            System.out.println("Nom morceau?");
 			    String nm = scan.nextLine();
 			    System.out.println("Chemin fichier?");
 			    String cf = scan.nextLine();
@@ -49,6 +50,7 @@ public class Client {
 			    System.out.println("Suppression");
 			    System.out.println("Nom morceau?");
 			    String nmm = scan.nextLine();
+                            nmm = scan.nextLine();
 			    System.out.println("Nom artiste?");
 			    String nma = scan.nextLine();
 			    printer.bSuprMorceau( nmm, nma );
@@ -58,12 +60,14 @@ public class Client {
 			    System.out.println("Recherche par artiste.");
 			    System.out.println("Artiste?");
 			    String naa = scan.nextLine();
+                            naa = scan.nextLine();
 			    biblAudio.Morceau[] vect = printer.getMorceauxArt( naa );
 			    break;
 			case 5:
 			    System.out.println("Recherche par nom.");
 			    System.out.println("Nom morceau?");
 			    String nab = scan.nextLine();
+                            nab = scan.nextLine();
 			    biblAudio.Morceau[] vectt = printer.getMorceauxMorc( nab );
 			    break;
 			case 6:
@@ -77,6 +81,7 @@ public class Client {
 			    System.out.println("Jouer morceau recherché.");
 			    System.out.println("Nom morceau?");
 			    String nmt = scan.nextLine();
+                            nmt = scan.nextLine();
 			    System.out.println("Nom artiste?");
 			    String nmy = scan.nextLine();
 			    printer.readSound(nmt,nmy);

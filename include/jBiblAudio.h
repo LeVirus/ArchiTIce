@@ -38,7 +38,8 @@ class BiblAudio : public  biblAudio :: ServeurIce
 	public:
 		BiblAudio();
 		biblAudio::mvectRecherche getMorceauxArt( const std::string &sNomArtiste, const Ice::Current& );
-		biblAudio::Morceau rechercherMorceauVect( biblAudio::mvectRecherche mvectMorc,const std::string &nomMorc ); 
+                biblAudio::Morceau rechercherMorceauVect( biblAudio::mvectRecherche mvectMorc,const std::string &nomMorc );
+                void afficherMorceauVect( const biblAudio::mvectRecherche &mvectMorc )const;
 		biblAudio::mvectRecherche getMorceauxMorc( const std::string &sNomMorc, const Ice::Current& );
 		void afficherMorceaux(const Ice::Current&);
 		void stopSound(const Ice::Current&);
