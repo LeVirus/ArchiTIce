@@ -8,7 +8,7 @@ public class Client {
 	    Ice.Communicator ic = null;
 	    try {
 		ic = Ice.Util.initialize(args);
-		Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");
+		Ice.ObjectPrx base = ic.stringToProxy("MetaServer:default -p 10001");
 		biblAudio.ServeurIcePrx printer = biblAudio.ServeurIcePrxHelper.checkedCast(base);
 		if (printer == null)
 		    throw new Error("Invalid proxy");

@@ -4,7 +4,7 @@
 
 
 BiblAudio::BiblAudio(){
-	Ice::CommunicatorPtr ic;
+/*	Ice::CommunicatorPtr ic;
 	try {
 		ic = Ice::initialize();
 		Ice::ObjectPrx obj = ic->stringToProxy("IceStorm/TopicManager:tcp -p 9999");
@@ -29,7 +29,7 @@ BiblAudio::BiblAudio(){
 		std::cout << "Monitor active!\n";
 	} catch (const Ice::Exception& e) {
 		std::cerr << e << '\n';
-	}
+	}*/
 
 	instVLC = libvlc_new (0, NULL);
 	pathToLemmy="../music/Lemmy.mp3";
