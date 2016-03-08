@@ -4,32 +4,33 @@
 
 
 BiblAudio::BiblAudio(){
-/*	Ice::CommunicatorPtr ic;
-	try {
-		ic = Ice::initialize();
-		Ice::ObjectPrx obj = ic->stringToProxy("IceStorm/TopicManager:tcp -p 9999");
-		IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast(obj);
-		IceStorm::TopicPrx topic;
-		while (!topic) {
-			try {
-				topic = topicManager->retrieve("StreamPlayerNotifs");
-				std::cout << "Retrieving topic...\n";
-			} catch (const IceStorm::NoSuchTopic&) {
-				std::cout << "No topic!\n";
-				try {
-					topic = topicManager->create("StreamPlayerNotifs");
-					std::cout << "Creating topic...\n";
-				} catch(const IceStorm::TopicExists&) {
-				}
-			}
+    Ice::CommunicatorPtr ic;
+    try {
+	ic = Ice::initialize(/*argc, argv*/);
+
+
+	Ice::ObjectPrx obj = ic->stringToProxy("IceStorm/TopicManager:tcp -p 9999");
+	IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast(obj);
+	IceStorm::TopicPrx topic;
+
+	while (!topic) {
+	    try {
+		topic = topicManager->retrieve("Weather");
+	    } catch (const IceStorm::NoSuchTopic&) {
+		try {
+		    topic = topicManager->create("Weather");
+		} catch (const IceStorm::TopicExists&) {
+		    // Another client created the topic.
 		}
-		std::cout << "Topic active!\n";
-		Ice::ObjectPrx pub = topic->getPublisher()->ice_twoway();
-		monitor = biblAudio::MonitorPrx::uncheckedCast(pub);
-		std::cout << "Monitor active!\n";
-	} catch (const Ice::Exception& e) {
-		std::cerr << e << '\n';
-	}*/
+	    }
+	}
+    } catch (const Ice::Exception& e) {
+	std::cerr << e << std::endl;
+	//status = 1;
+    } catch (const char* msg) {
+	std::cerr << msg << std::endl;
+	//status = 1;
+    }
 
 	instVLC = libvlc_new (0, NULL);
         pathToLemmy="../music/";
