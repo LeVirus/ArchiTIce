@@ -51,2227 +51,2227 @@
 namespace IceProxy
 {
 
-	namespace biblAudio
-	{
+namespace biblAudio
+{
 
-		class ServeurIce;
-		void __read(::IceInternal::BasicStream*, ::IceInternal::ProxyHandle< ::IceProxy::biblAudio::ServeurIce>&);
-		::IceProxy::Ice::Object* upCast(::IceProxy::biblAudio::ServeurIce*);
+class ServeurIce;
+void __read(::IceInternal::BasicStream*, ::IceInternal::ProxyHandle< ::IceProxy::biblAudio::ServeurIce>&);
+::IceProxy::Ice::Object* upCast(::IceProxy::biblAudio::ServeurIce*);
 
-		class Monitor;
-		void __read(::IceInternal::BasicStream*, ::IceInternal::ProxyHandle< ::IceProxy::biblAudio::Monitor>&);
-		::IceProxy::Ice::Object* upCast(::IceProxy::biblAudio::Monitor*);
+class Monitor;
+void __read(::IceInternal::BasicStream*, ::IceInternal::ProxyHandle< ::IceProxy::biblAudio::Monitor>&);
+::IceProxy::Ice::Object* upCast(::IceProxy::biblAudio::Monitor*);
 
-	}
+}
 
 }
 
 namespace biblAudio
 {
 
-	class ServeurIce;
-	bool operator==(const ServeurIce&, const ServeurIce&);
-	bool operator<(const ServeurIce&, const ServeurIce&);
-	::Ice::Object* upCast(::biblAudio::ServeurIce*);
-	typedef ::IceInternal::Handle< ::biblAudio::ServeurIce> ServeurIcePtr;
-	typedef ::IceInternal::ProxyHandle< ::IceProxy::biblAudio::ServeurIce> ServeurIcePrx;
-	void __patch(ServeurIcePtr&, const ::Ice::ObjectPtr&);
+class ServeurIce;
+bool operator==(const ServeurIce&, const ServeurIce&);
+bool operator<(const ServeurIce&, const ServeurIce&);
+::Ice::Object* upCast(::biblAudio::ServeurIce*);
+typedef ::IceInternal::Handle< ::biblAudio::ServeurIce> ServeurIcePtr;
+typedef ::IceInternal::ProxyHandle< ::IceProxy::biblAudio::ServeurIce> ServeurIcePrx;
+void __patch(ServeurIcePtr&, const ::Ice::ObjectPtr&);
 
-	class Monitor;
-	bool operator==(const Monitor&, const Monitor&);
-	bool operator<(const Monitor&, const Monitor&);
-	::Ice::Object* upCast(::biblAudio::Monitor*);
-	typedef ::IceInternal::Handle< ::biblAudio::Monitor> MonitorPtr;
-	typedef ::IceInternal::ProxyHandle< ::IceProxy::biblAudio::Monitor> MonitorPrx;
-	void __patch(MonitorPtr&, const ::Ice::ObjectPtr&);
+class Monitor;
+bool operator==(const Monitor&, const Monitor&);
+bool operator<(const Monitor&, const Monitor&);
+::Ice::Object* upCast(::biblAudio::Monitor*);
+typedef ::IceInternal::Handle< ::biblAudio::Monitor> MonitorPtr;
+typedef ::IceInternal::ProxyHandle< ::IceProxy::biblAudio::Monitor> MonitorPrx;
+void __patch(MonitorPtr&, const ::Ice::ObjectPtr&);
 
 }
 
 namespace biblAudio
 {
 
-	struct Morceau
-	{
-		::std::string msNomMorceau;
-		::std::string msNomArtiste;
-		::std::string msFichier;
-		::Ice::Int muiDateSortie;
-		::Ice::Int muiDureeMorceau;
+struct Morceau
+{
+    ::std::string msNomMorceau;
+    ::std::string msNomArtiste;
+    ::std::string msFichier;
+    ::Ice::Int muiDateSortie;
+    ::Ice::Int muiDureeMorceau;
 
-		bool operator==(const Morceau& __rhs) const
-		{
-			if(this == &__rhs)
-			{
-				return true;
-			}
-			if(msNomMorceau != __rhs.msNomMorceau)
-			{
-				return false;
-			}
-			if(msNomArtiste != __rhs.msNomArtiste)
-			{
-				return false;
-			}
-			if(msFichier != __rhs.msFichier)
-			{
-				return false;
-			}
-			if(muiDateSortie != __rhs.muiDateSortie)
-			{
-				return false;
-			}
-			if(muiDureeMorceau != __rhs.muiDureeMorceau)
-			{
-				return false;
-			}
-			return true;
-		}
+    bool operator==(const Morceau& __rhs) const
+    {
+        if(this == &__rhs)
+        {
+            return true;
+        }
+        if(msNomMorceau != __rhs.msNomMorceau)
+        {
+            return false;
+        }
+        if(msNomArtiste != __rhs.msNomArtiste)
+        {
+            return false;
+        }
+        if(msFichier != __rhs.msFichier)
+        {
+            return false;
+        }
+        if(muiDateSortie != __rhs.muiDateSortie)
+        {
+            return false;
+        }
+        if(muiDureeMorceau != __rhs.muiDureeMorceau)
+        {
+            return false;
+        }
+        return true;
+    }
 
-		bool operator<(const Morceau& __rhs) const
-		{
-			if(this == &__rhs)
-			{
-				return false;
-			}
-			if(msNomMorceau < __rhs.msNomMorceau)
-			{
-				return true;
-			}
-			else if(__rhs.msNomMorceau < msNomMorceau)
-			{
-				return false;
-			}
-			if(msNomArtiste < __rhs.msNomArtiste)
-			{
-				return true;
-			}
-			else if(__rhs.msNomArtiste < msNomArtiste)
-			{
-				return false;
-			}
-			if(msFichier < __rhs.msFichier)
-			{
-				return true;
-			}
-			else if(__rhs.msFichier < msFichier)
-			{
-				return false;
-			}
-			if(muiDateSortie < __rhs.muiDateSortie)
-			{
-				return true;
-			}
-			else if(__rhs.muiDateSortie < muiDateSortie)
-			{
-				return false;
-			}
-			if(muiDureeMorceau < __rhs.muiDureeMorceau)
-			{
-				return true;
-			}
-			else if(__rhs.muiDureeMorceau < muiDureeMorceau)
-			{
-				return false;
-			}
-			return false;
-		}
+    bool operator<(const Morceau& __rhs) const
+    {
+        if(this == &__rhs)
+        {
+            return false;
+        }
+        if(msNomMorceau < __rhs.msNomMorceau)
+        {
+            return true;
+        }
+        else if(__rhs.msNomMorceau < msNomMorceau)
+        {
+            return false;
+        }
+        if(msNomArtiste < __rhs.msNomArtiste)
+        {
+            return true;
+        }
+        else if(__rhs.msNomArtiste < msNomArtiste)
+        {
+            return false;
+        }
+        if(msFichier < __rhs.msFichier)
+        {
+            return true;
+        }
+        else if(__rhs.msFichier < msFichier)
+        {
+            return false;
+        }
+        if(muiDateSortie < __rhs.muiDateSortie)
+        {
+            return true;
+        }
+        else if(__rhs.muiDateSortie < muiDateSortie)
+        {
+            return false;
+        }
+        if(muiDureeMorceau < __rhs.muiDureeMorceau)
+        {
+            return true;
+        }
+        else if(__rhs.muiDureeMorceau < muiDureeMorceau)
+        {
+            return false;
+        }
+        return false;
+    }
 
-		bool operator!=(const Morceau& __rhs) const
-		{
-			return !operator==(__rhs);
-		}
-		bool operator<=(const Morceau& __rhs) const
-		{
-			return operator<(__rhs) || operator==(__rhs);
-		}
-		bool operator>(const Morceau& __rhs) const
-		{
-			return !operator<(__rhs) && !operator==(__rhs);
-		}
-		bool operator>=(const Morceau& __rhs) const
-		{
-			return !operator<(__rhs);
-		}
-	};
+    bool operator!=(const Morceau& __rhs) const
+    {
+        return !operator==(__rhs);
+    }
+    bool operator<=(const Morceau& __rhs) const
+    {
+        return operator<(__rhs) || operator==(__rhs);
+    }
+    bool operator>(const Morceau& __rhs) const
+    {
+        return !operator<(__rhs) && !operator==(__rhs);
+    }
+    bool operator>=(const Morceau& __rhs) const
+    {
+        return !operator<(__rhs);
+    }
+};
 
-	typedef ::std::vector< ::biblAudio::Morceau> mvectRecherche;
+typedef ::std::vector< ::biblAudio::Morceau> mvectRecherche;
 
-	typedef ::std::map< ::std::string, ::biblAudio::Morceau> mmapMorceaux;
+typedef ::std::map< ::std::string, ::biblAudio::Morceau> mmapMorceaux;
 
 }
 
 namespace Ice
 {
-	template<>
-		struct StreamableTraits< ::biblAudio::Morceau>
-		{
-			static const StreamHelperCategory helper = StreamHelperCategoryStruct;
-			static const int minWireSize = 11;
-			static const bool fixedLength = false;
-		};
+template<>
+struct StreamableTraits< ::biblAudio::Morceau>
+{
+    static const StreamHelperCategory helper = StreamHelperCategoryStruct;
+    static const int minWireSize = 11;
+    static const bool fixedLength = false;
+};
 
-	template<class S>
-		struct StreamWriter< ::biblAudio::Morceau, S>
-		{
-			static void write(S* __os, const ::biblAudio::Morceau& v)
-			{
-				__os->write(v.msNomMorceau);
-				__os->write(v.msNomArtiste);
-				__os->write(v.msFichier);
-				__os->write(v.muiDateSortie);
-				__os->write(v.muiDureeMorceau);
-			}
-		};
+template<class S>
+struct StreamWriter< ::biblAudio::Morceau, S>
+{
+    static void write(S* __os, const ::biblAudio::Morceau& v)
+    {
+        __os->write(v.msNomMorceau);
+        __os->write(v.msNomArtiste);
+        __os->write(v.msFichier);
+        __os->write(v.muiDateSortie);
+        __os->write(v.muiDureeMorceau);
+    }
+};
 
-	template<class S>
-		struct StreamReader< ::biblAudio::Morceau, S>
-		{
-			static void read(S* __is, ::biblAudio::Morceau& v)
-			{
-				__is->read(v.msNomMorceau);
-				__is->read(v.msNomArtiste);
-				__is->read(v.msFichier);
-				__is->read(v.muiDateSortie);
-				__is->read(v.muiDureeMorceau);
-			}
-		};
+template<class S>
+struct StreamReader< ::biblAudio::Morceau, S>
+{
+    static void read(S* __is, ::biblAudio::Morceau& v)
+    {
+        __is->read(v.msNomMorceau);
+        __is->read(v.msNomArtiste);
+        __is->read(v.msFichier);
+        __is->read(v.muiDateSortie);
+        __is->read(v.muiDureeMorceau);
+    }
+};
 
 }
 
 namespace biblAudio
 {
 
-	class Callback_ServeurIce_afficherMorceaux_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_ServeurIce_afficherMorceaux_Base> Callback_ServeurIce_afficherMorceauxPtr;
+class Callback_ServeurIce_afficherMorceaux_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_ServeurIce_afficherMorceaux_Base> Callback_ServeurIce_afficherMorceauxPtr;
 
-	class Callback_ServeurIce_bRechercherMorceau_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_ServeurIce_bRechercherMorceau_Base> Callback_ServeurIce_bRechercherMorceauPtr;
+class Callback_ServeurIce_bRechercherMorceau_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_ServeurIce_bRechercherMorceau_Base> Callback_ServeurIce_bRechercherMorceauPtr;
 
-	class Callback_ServeurIce_bAjoutMorceau_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_ServeurIce_bAjoutMorceau_Base> Callback_ServeurIce_bAjoutMorceauPtr;
+class Callback_ServeurIce_bAjoutMorceau_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_ServeurIce_bAjoutMorceau_Base> Callback_ServeurIce_bAjoutMorceauPtr;
 
-	class Callback_ServeurIce_bSuprMorceau_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_ServeurIce_bSuprMorceau_Base> Callback_ServeurIce_bSuprMorceauPtr;
+class Callback_ServeurIce_bSuprMorceau_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_ServeurIce_bSuprMorceau_Base> Callback_ServeurIce_bSuprMorceauPtr;
 
-	class Callback_ServeurIce_getMorceauxArt_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_ServeurIce_getMorceauxArt_Base> Callback_ServeurIce_getMorceauxArtPtr;
+class Callback_ServeurIce_getMorceauxArt_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_ServeurIce_getMorceauxArt_Base> Callback_ServeurIce_getMorceauxArtPtr;
 
-	class Callback_ServeurIce_getMorceauxMorc_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_ServeurIce_getMorceauxMorc_Base> Callback_ServeurIce_getMorceauxMorcPtr;
+class Callback_ServeurIce_getMorceauxMorc_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_ServeurIce_getMorceauxMorc_Base> Callback_ServeurIce_getMorceauxMorcPtr;
 
-	class Callback_ServeurIce_stopSound_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_ServeurIce_stopSound_Base> Callback_ServeurIce_stopSoundPtr;
+class Callback_ServeurIce_stopSound_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_ServeurIce_stopSound_Base> Callback_ServeurIce_stopSoundPtr;
 
-	class Callback_ServeurIce_readSoundFic_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_ServeurIce_readSoundFic_Base> Callback_ServeurIce_readSoundFicPtr;
+class Callback_ServeurIce_readSoundFic_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_ServeurIce_readSoundFic_Base> Callback_ServeurIce_readSoundFicPtr;
 
-	class Callback_ServeurIce_readSound_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_ServeurIce_readSound_Base> Callback_ServeurIce_readSoundPtr;
+class Callback_ServeurIce_readSound_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_ServeurIce_readSound_Base> Callback_ServeurIce_readSoundPtr;
 
-	class Callback_Monitor_report_Base : virtual public ::IceInternal::CallbackBase { };
-	typedef ::IceUtil::Handle< Callback_Monitor_report_Base> Callback_Monitor_reportPtr;
+class Callback_Monitor_report_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_Monitor_report_Base> Callback_Monitor_reportPtr;
 
 }
 
 namespace IceProxy
 {
 
-	namespace biblAudio
-	{
+namespace biblAudio
+{
 
-		class ServeurIce : virtual public ::IceProxy::Ice::Object
-		{
-			public:
+class ServeurIce : virtual public ::IceProxy::Ice::Object
+{
+public:
 
-				void afficherMorceaux()
-				{
-					afficherMorceaux(0);
-				}
-				void afficherMorceaux(const ::Ice::Context& __ctx)
-				{
-					afficherMorceaux(&__ctx);
-				}
+    void afficherMorceaux()
+    {
+        afficherMorceaux(0);
+    }
+    void afficherMorceaux(const ::Ice::Context& __ctx)
+    {
+        afficherMorceaux(&__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_afficherMorceaux(const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_afficherMorceaux(0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
-					}
-				::Ice::AsyncResultPtr
-					begin_afficherMorceaux(const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_afficherMorceaux(0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_afficherMorceaux(const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_afficherMorceaux(&__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_afficherMorceaux(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_afficherMorceaux(&__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_afficherMorceaux(const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_afficherMorceaux(0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+    }
+    ::Ice::AsyncResultPtr
+    begin_afficherMorceaux(const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_afficherMorceaux(0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_afficherMorceaux(const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_afficherMorceaux(&__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_afficherMorceaux(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_afficherMorceaux(&__ctx, ::Ice::newCallback(__completed, __sent));
+    }
 #endif
 
-				::Ice::AsyncResultPtr begin_afficherMorceaux()
-				{
-					return begin_afficherMorceaux(0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_afficherMorceaux()
+    {
+        return begin_afficherMorceaux(0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::Context& __ctx)
-				{
-					return begin_afficherMorceaux(&__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::Context& __ctx)
+    {
+        return begin_afficherMorceaux(&__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_afficherMorceaux(0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_afficherMorceaux(0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_afficherMorceaux(&__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_afficherMorceaux(&__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_afficherMorceaux(const ::biblAudio::Callback_ServeurIce_afficherMorceauxPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_afficherMorceaux(0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_afficherMorceaux(const ::biblAudio::Callback_ServeurIce_afficherMorceauxPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_afficherMorceaux(0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_afficherMorceauxPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_afficherMorceaux(&__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_afficherMorceauxPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_afficherMorceaux(&__ctx, __del, __cookie);
+    }
 
-				void end_afficherMorceaux(const ::Ice::AsyncResultPtr&);
+    void end_afficherMorceaux(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    void afficherMorceaux(const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
 
-				void afficherMorceaux(const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_afficherMorceaux(const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
-
-			public:
-
-				::biblAudio::Morceau bRechercherMorceau(const ::std::string& __p_sNomMusique)
-				{
-					return bRechercherMorceau(__p_sNomMusique, 0);
-				}
-				::biblAudio::Morceau bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx)
-				{
-					return bRechercherMorceau(__p_sNomMusique, &__ctx);
-				}
+    ::biblAudio::Morceau bRechercherMorceau(const ::std::string& __p_sNomMusique)
+    {
+        return bRechercherMorceau(__p_sNomMusique, 0);
+    }
+    ::biblAudio::Morceau bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx)
+    {
+        return bRechercherMorceau(__p_sNomMusique, &__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::IceInternal::Function<void (const ::biblAudio::Morceau&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_bRechercherMorceau(__p_sNomMusique, 0, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_bRechercherMorceau(__p_sNomMusique, 0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::biblAudio::Morceau&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_bRechercherMorceau(__p_sNomMusique, &__ctx, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_bRechercherMorceau(__p_sNomMusique, &__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::IceInternal::Function<void (const ::biblAudio::Morceau&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_bRechercherMorceau(__p_sNomMusique, 0, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_bRechercherMorceau(__p_sNomMusique, 0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::biblAudio::Morceau&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_bRechercherMorceau(__p_sNomMusique, &__ctx, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_bRechercherMorceau(__p_sNomMusique, &__ctx, ::Ice::newCallback(__completed, __sent));
+    }
+    
+private:
 
-			private:
-
-				::Ice::AsyncResultPtr __begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::biblAudio::Morceau&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
-
-			public:
+    ::Ice::AsyncResultPtr __begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::biblAudio::Morceau&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
+    
+public:
 #endif
 
-				::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique)
-				{
-					return begin_bRechercherMorceau(__p_sNomMusique, 0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique)
+    {
+        return begin_bRechercherMorceau(__p_sNomMusique, 0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx)
-				{
-					return begin_bRechercherMorceau(__p_sNomMusique, &__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx)
+    {
+        return begin_bRechercherMorceau(__p_sNomMusique, &__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bRechercherMorceau(__p_sNomMusique, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bRechercherMorceau(__p_sNomMusique, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bRechercherMorceau(__p_sNomMusique, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bRechercherMorceau(__p_sNomMusique, &__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::biblAudio::Callback_ServeurIce_bRechercherMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bRechercherMorceau(__p_sNomMusique, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::biblAudio::Callback_ServeurIce_bRechercherMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bRechercherMorceau(__p_sNomMusique, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_bRechercherMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bRechercherMorceau(__p_sNomMusique, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string& __p_sNomMusique, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_bRechercherMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bRechercherMorceau(__p_sNomMusique, &__ctx, __del, __cookie);
+    }
 
-				::biblAudio::Morceau end_bRechercherMorceau(const ::Ice::AsyncResultPtr&);
+    ::biblAudio::Morceau end_bRechercherMorceau(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    ::biblAudio::Morceau bRechercherMorceau(const ::std::string&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
 
-				::biblAudio::Morceau bRechercherMorceau(const ::std::string&, const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_bRechercherMorceau(const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
-
-			public:
-
-				bool bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie)
-				{
-					return bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0);
-				}
-				bool bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx)
-				{
-					return bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx);
-				}
+    bool bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie)
+    {
+        return bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0);
+    }
+    bool bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx)
+    {
+        return bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, ::Ice::newCallback(__completed, __sent));
+    }
+    
+private:
 
-			private:
-
-				::Ice::AsyncResultPtr __begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
-
-			public:
+    ::Ice::AsyncResultPtr __begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
+    
+public:
 #endif
 
-				::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie)
-				{
-					return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie)
+    {
+        return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx)
-				{
-					return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx)
+    {
+        return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::biblAudio::Callback_ServeurIce_bAjoutMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::biblAudio::Callback_ServeurIce_bAjoutMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_bAjoutMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string& __p_sNomArt, const ::std::string& __p_sNomMorc, const ::std::string& __p_sFic, ::Ice::Int __p_uiDureeMorc, ::Ice::Int __p_uiDateSortie, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_bAjoutMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bAjoutMorceau(__p_sNomArt, __p_sNomMorc, __p_sFic, __p_uiDureeMorc, __p_uiDateSortie, &__ctx, __del, __cookie);
+    }
 
-				bool end_bAjoutMorceau(const ::Ice::AsyncResultPtr&);
+    bool end_bAjoutMorceau(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    bool bAjoutMorceau(const ::std::string&, const ::std::string&, const ::std::string&, ::Ice::Int, ::Ice::Int, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string&, const ::std::string&, const ::std::string&, ::Ice::Int, ::Ice::Int, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
 
-				bool bAjoutMorceau(const ::std::string&, const ::std::string&, const ::std::string&, ::Ice::Int, ::Ice::Int, const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_bAjoutMorceau(const ::std::string&, const ::std::string&, const ::std::string&, ::Ice::Int, ::Ice::Int, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
-
-			public:
-
-				bool bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt)
-				{
-					return bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0);
-				}
-				bool bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx)
-				{
-					return bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx);
-				}
+    bool bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt)
+    {
+        return bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0);
+    }
+    bool bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx)
+    {
+        return bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, ::Ice::newCallback(__completed, __sent));
+    }
+    
+private:
 
-			private:
-
-				::Ice::AsyncResultPtr __begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
-
-			public:
+    ::Ice::AsyncResultPtr __begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
+    
+public:
 #endif
 
-				::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt)
-				{
-					return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt)
+    {
+        return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx)
-				{
-					return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx)
+    {
+        return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::biblAudio::Callback_ServeurIce_bSuprMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::biblAudio::Callback_ServeurIce_bSuprMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_bSuprMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string& __p_sNomMorc, const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_bSuprMorceauPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_bSuprMorceau(__p_sNomMorc, __p_sNomArt, &__ctx, __del, __cookie);
+    }
 
-				bool end_bSuprMorceau(const ::Ice::AsyncResultPtr&);
+    bool end_bSuprMorceau(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    bool bSuprMorceau(const ::std::string&, const ::std::string&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string&, const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
 
-				bool bSuprMorceau(const ::std::string&, const ::std::string&, const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_bSuprMorceau(const ::std::string&, const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
-
-			public:
-
-				::biblAudio::mvectRecherche getMorceauxArt(const ::std::string& __p_sNomArt)
-				{
-					return getMorceauxArt(__p_sNomArt, 0);
-				}
-				::biblAudio::mvectRecherche getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx)
-				{
-					return getMorceauxArt(__p_sNomArt, &__ctx);
-				}
+    ::biblAudio::mvectRecherche getMorceauxArt(const ::std::string& __p_sNomArt)
+    {
+        return getMorceauxArt(__p_sNomArt, 0);
+    }
+    ::biblAudio::mvectRecherche getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx)
+    {
+        return getMorceauxArt(__p_sNomArt, &__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_getMorceauxArt(__p_sNomArt, 0, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_getMorceauxArt(__p_sNomArt, 0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_getMorceauxArt(__p_sNomArt, &__ctx, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_getMorceauxArt(__p_sNomArt, &__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_getMorceauxArt(__p_sNomArt, 0, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_getMorceauxArt(__p_sNomArt, 0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_getMorceauxArt(__p_sNomArt, &__ctx, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_getMorceauxArt(__p_sNomArt, &__ctx, ::Ice::newCallback(__completed, __sent));
+    }
+    
+private:
 
-			private:
-
-				::Ice::AsyncResultPtr __begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
-
-			public:
+    ::Ice::AsyncResultPtr __begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
+    
+public:
 #endif
 
-				::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt)
-				{
-					return begin_getMorceauxArt(__p_sNomArt, 0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt)
+    {
+        return begin_getMorceauxArt(__p_sNomArt, 0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx)
-				{
-					return begin_getMorceauxArt(__p_sNomArt, &__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx)
+    {
+        return begin_getMorceauxArt(__p_sNomArt, &__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_getMorceauxArt(__p_sNomArt, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_getMorceauxArt(__p_sNomArt, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_getMorceauxArt(__p_sNomArt, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_getMorceauxArt(__p_sNomArt, &__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::biblAudio::Callback_ServeurIce_getMorceauxArtPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_getMorceauxArt(__p_sNomArt, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::biblAudio::Callback_ServeurIce_getMorceauxArtPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_getMorceauxArt(__p_sNomArt, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_getMorceauxArtPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_getMorceauxArt(__p_sNomArt, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string& __p_sNomArt, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_getMorceauxArtPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_getMorceauxArt(__p_sNomArt, &__ctx, __del, __cookie);
+    }
 
-				::biblAudio::mvectRecherche end_getMorceauxArt(const ::Ice::AsyncResultPtr&);
+    ::biblAudio::mvectRecherche end_getMorceauxArt(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    ::biblAudio::mvectRecherche getMorceauxArt(const ::std::string&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
 
-				::biblAudio::mvectRecherche getMorceauxArt(const ::std::string&, const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_getMorceauxArt(const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
-
-			public:
-
-				::biblAudio::mvectRecherche getMorceauxMorc(const ::std::string& __p_sNomMorc)
-				{
-					return getMorceauxMorc(__p_sNomMorc, 0);
-				}
-				::biblAudio::mvectRecherche getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx)
-				{
-					return getMorceauxMorc(__p_sNomMorc, &__ctx);
-				}
+    ::biblAudio::mvectRecherche getMorceauxMorc(const ::std::string& __p_sNomMorc)
+    {
+        return getMorceauxMorc(__p_sNomMorc, 0);
+    }
+    ::biblAudio::mvectRecherche getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx)
+    {
+        return getMorceauxMorc(__p_sNomMorc, &__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_getMorceauxMorc(__p_sNomMorc, 0, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_getMorceauxMorc(__p_sNomMorc, 0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return __begin_getMorceauxMorc(__p_sNomMorc, &__ctx, __response, __exception, __sent);
-					}
-				::Ice::AsyncResultPtr
-					begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_getMorceauxMorc(__p_sNomMorc, &__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_getMorceauxMorc(__p_sNomMorc, 0, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_getMorceauxMorc(__p_sNomMorc, 0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return __begin_getMorceauxMorc(__p_sNomMorc, &__ctx, __response, __exception, __sent);
+    }
+    ::Ice::AsyncResultPtr
+    begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_getMorceauxMorc(__p_sNomMorc, &__ctx, ::Ice::newCallback(__completed, __sent));
+    }
+    
+private:
 
-			private:
-
-				::Ice::AsyncResultPtr __begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
-
-			public:
+    ::Ice::AsyncResultPtr __begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::biblAudio::mvectRecherche&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent);
+    
+public:
 #endif
 
-				::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc)
-				{
-					return begin_getMorceauxMorc(__p_sNomMorc, 0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc)
+    {
+        return begin_getMorceauxMorc(__p_sNomMorc, 0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx)
-				{
-					return begin_getMorceauxMorc(__p_sNomMorc, &__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx)
+    {
+        return begin_getMorceauxMorc(__p_sNomMorc, &__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_getMorceauxMorc(__p_sNomMorc, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_getMorceauxMorc(__p_sNomMorc, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_getMorceauxMorc(__p_sNomMorc, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_getMorceauxMorc(__p_sNomMorc, &__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::biblAudio::Callback_ServeurIce_getMorceauxMorcPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_getMorceauxMorc(__p_sNomMorc, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::biblAudio::Callback_ServeurIce_getMorceauxMorcPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_getMorceauxMorc(__p_sNomMorc, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_getMorceauxMorcPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_getMorceauxMorc(__p_sNomMorc, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string& __p_sNomMorc, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_getMorceauxMorcPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_getMorceauxMorc(__p_sNomMorc, &__ctx, __del, __cookie);
+    }
 
-				::biblAudio::mvectRecherche end_getMorceauxMorc(const ::Ice::AsyncResultPtr&);
+    ::biblAudio::mvectRecherche end_getMorceauxMorc(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    ::biblAudio::mvectRecherche getMorceauxMorc(const ::std::string&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
 
-				::biblAudio::mvectRecherche getMorceauxMorc(const ::std::string&, const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_getMorceauxMorc(const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
-
-			public:
-
-				void stopSound()
-				{
-					stopSound(0);
-				}
-				void stopSound(const ::Ice::Context& __ctx)
-				{
-					stopSound(&__ctx);
-				}
+    void stopSound()
+    {
+        stopSound(0);
+    }
+    void stopSound(const ::Ice::Context& __ctx)
+    {
+        stopSound(&__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_stopSound(const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_stopSound(0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
-					}
-				::Ice::AsyncResultPtr
-					begin_stopSound(const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_stopSound(0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_stopSound(const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_stopSound(&__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_stopSound(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_stopSound(&__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_stopSound(const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_stopSound(0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+    }
+    ::Ice::AsyncResultPtr
+    begin_stopSound(const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_stopSound(0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_stopSound(const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_stopSound(&__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_stopSound(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_stopSound(&__ctx, ::Ice::newCallback(__completed, __sent));
+    }
 #endif
 
-				::Ice::AsyncResultPtr begin_stopSound()
-				{
-					return begin_stopSound(0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_stopSound()
+    {
+        return begin_stopSound(0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_stopSound(const ::Ice::Context& __ctx)
-				{
-					return begin_stopSound(&__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_stopSound(const ::Ice::Context& __ctx)
+    {
+        return begin_stopSound(&__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_stopSound(const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_stopSound(0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_stopSound(const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_stopSound(0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_stopSound(const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_stopSound(&__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_stopSound(const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_stopSound(&__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_stopSound(const ::biblAudio::Callback_ServeurIce_stopSoundPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_stopSound(0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_stopSound(const ::biblAudio::Callback_ServeurIce_stopSoundPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_stopSound(0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_stopSound(const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_stopSoundPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_stopSound(&__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_stopSound(const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_stopSoundPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_stopSound(&__ctx, __del, __cookie);
+    }
 
-				void end_stopSound(const ::Ice::AsyncResultPtr&);
+    void end_stopSound(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    void stopSound(const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_stopSound(const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
 
-				void stopSound(const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_stopSound(const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
-
-			public:
-
-				void readSoundFic(const ::std::string& __p_pathToFic)
-				{
-					readSoundFic(__p_pathToFic, 0);
-				}
-				void readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx)
-				{
-					readSoundFic(__p_pathToFic, &__ctx);
-				}
+    void readSoundFic(const ::std::string& __p_pathToFic)
+    {
+        readSoundFic(__p_pathToFic, 0);
+    }
+    void readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx)
+    {
+        readSoundFic(__p_pathToFic, &__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_readSoundFic(const ::std::string& __p_pathToFic, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_readSoundFic(__p_pathToFic, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
-					}
-				::Ice::AsyncResultPtr
-					begin_readSoundFic(const ::std::string& __p_pathToFic, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_readSoundFic(__p_pathToFic, 0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_readSoundFic(__p_pathToFic, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_readSoundFic(__p_pathToFic, &__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_readSoundFic(const ::std::string& __p_pathToFic, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_readSoundFic(__p_pathToFic, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+    }
+    ::Ice::AsyncResultPtr
+    begin_readSoundFic(const ::std::string& __p_pathToFic, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_readSoundFic(__p_pathToFic, 0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_readSoundFic(__p_pathToFic, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_readSoundFic(__p_pathToFic, &__ctx, ::Ice::newCallback(__completed, __sent));
+    }
 #endif
 
-				::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic)
-				{
-					return begin_readSoundFic(__p_pathToFic, 0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic)
+    {
+        return begin_readSoundFic(__p_pathToFic, 0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx)
-				{
-					return begin_readSoundFic(__p_pathToFic, &__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx)
+    {
+        return begin_readSoundFic(__p_pathToFic, &__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_readSoundFic(__p_pathToFic, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_readSoundFic(__p_pathToFic, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_readSoundFic(__p_pathToFic, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_readSoundFic(__p_pathToFic, &__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::biblAudio::Callback_ServeurIce_readSoundFicPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_readSoundFic(__p_pathToFic, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::biblAudio::Callback_ServeurIce_readSoundFicPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_readSoundFic(__p_pathToFic, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_readSoundFicPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_readSoundFic(__p_pathToFic, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string& __p_pathToFic, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_readSoundFicPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_readSoundFic(__p_pathToFic, &__ctx, __del, __cookie);
+    }
 
-				void end_readSoundFic(const ::Ice::AsyncResultPtr&);
+    void end_readSoundFic(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    void readSoundFic(const ::std::string&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
 
-				void readSoundFic(const ::std::string&, const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_readSoundFic(const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
-
-			public:
-
-				void readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste)
-				{
-					readSound(__p_sNomMorceau, __p_sNomArtiste, 0);
-				}
-				void readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx)
-				{
-					readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx);
-				}
+    void readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste)
+    {
+        readSound(__p_sNomMorceau, __p_sNomArtiste, 0);
+    }
+    void readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx)
+    {
+        readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
-					}
-				::Ice::AsyncResultPtr
-					begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+    }
+    ::Ice::AsyncResultPtr
+    begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, ::Ice::newCallback(__completed, __sent));
+    }
 #endif
 
-				::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste)
-				{
-					return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste)
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx)
-				{
-					return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx)
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::biblAudio::Callback_ServeurIce_readSoundPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::biblAudio::Callback_ServeurIce_readSoundPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_readSoundPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_readSound(const ::std::string& __p_sNomMorceau, const ::std::string& __p_sNomArtiste, const ::Ice::Context& __ctx, const ::biblAudio::Callback_ServeurIce_readSoundPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_readSound(__p_sNomMorceau, __p_sNomArtiste, &__ctx, __del, __cookie);
+    }
 
-				void end_readSound(const ::Ice::AsyncResultPtr&);
+    void end_readSound(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    void readSound(const ::std::string&, const ::std::string&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_readSound(const ::std::string&, const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_context(const ::Ice::Context& __context) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_context(__context).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_adapterId(const ::std::string& __id) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_adapterId(__id).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_endpoints(const ::Ice::EndpointSeq& __endpoints) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_endpoints(__endpoints).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_locatorCacheTimeout(int __timeout) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_locatorCacheTimeout(__timeout).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_connectionCached(bool __cached) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_connectionCached(__cached).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_endpointSelection(::Ice::EndpointSelectionType __est) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_endpointSelection(__est).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_secure(bool __secure) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_secure(__secure).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_preferSecure(bool __preferSecure) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_preferSecure(__preferSecure).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_router(const ::Ice::RouterPrx& __router) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_router(__router).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_locator(const ::Ice::LocatorPrx& __locator) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_locator(__locator).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_collocationOptimized(bool __co) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_collocationOptimized(__co).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_invocationTimeout(int __timeout) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_invocationTimeout(__timeout).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_twoway() const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_twoway().get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_oneway() const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_oneway().get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_batchOneway() const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_batchOneway().get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_datagram() const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_datagram().get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_batchDatagram() const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_batchDatagram().get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_compress(bool __compress) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_compress(__compress).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_timeout(int __timeout) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_timeout(__timeout).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_connectionId(const ::std::string& __id) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_connectionId(__id).get());
+    }
+    
+    ::IceInternal::ProxyHandle<ServeurIce> ice_encodingVersion(const ::Ice::EncodingVersion& __v) const
+    {
+        return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_encodingVersion(__v).get());
+    }
+    
+    static const ::std::string& ice_staticId();
 
-				void readSound(const ::std::string&, const ::std::string&, const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_readSound(const ::std::string&, const ::std::string&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+private: 
+    virtual ::IceProxy::Ice::Object* __newInstance() const;
+};
 
-			public:
+class Monitor : virtual public ::IceProxy::Ice::Object
+{
+public:
 
-				::IceInternal::ProxyHandle<ServeurIce> ice_context(const ::Ice::Context& __context) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_context(__context).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_adapterId(const ::std::string& __id) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_adapterId(__id).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_endpoints(const ::Ice::EndpointSeq& __endpoints) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_endpoints(__endpoints).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_locatorCacheTimeout(int __timeout) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_locatorCacheTimeout(__timeout).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_connectionCached(bool __cached) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_connectionCached(__cached).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_endpointSelection(::Ice::EndpointSelectionType __est) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_endpointSelection(__est).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_secure(bool __secure) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_secure(__secure).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_preferSecure(bool __preferSecure) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_preferSecure(__preferSecure).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_router(const ::Ice::RouterPrx& __router) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_router(__router).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_locator(const ::Ice::LocatorPrx& __locator) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_locator(__locator).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_collocationOptimized(bool __co) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_collocationOptimized(__co).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_invocationTimeout(int __timeout) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_invocationTimeout(__timeout).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_twoway() const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_twoway().get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_oneway() const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_oneway().get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_batchOneway() const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_batchOneway().get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_datagram() const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_datagram().get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_batchDatagram() const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_batchDatagram().get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_compress(bool __compress) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_compress(__compress).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_timeout(int __timeout) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_timeout(__timeout).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_connectionId(const ::std::string& __id) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_connectionId(__id).get());
-				}
-
-				::IceInternal::ProxyHandle<ServeurIce> ice_encodingVersion(const ::Ice::EncodingVersion& __v) const
-				{
-					return dynamic_cast<ServeurIce*>(::IceProxy::Ice::Object::ice_encodingVersion(__v).get());
-				}
-
-				static const ::std::string& ice_staticId();
-
-			private: 
-				virtual ::IceProxy::Ice::Object* __newInstance() const;
-		};
-
-		class Monitor : virtual public ::IceProxy::Ice::Object
-		{
-			public:
-
-				void report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau)
-				{
-					report(__p_action, __p_morceau, 0);
-				}
-				void report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx)
-				{
-					report(__p_action, __p_morceau, &__ctx);
-				}
+    void report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau)
+    {
+        report(__p_action, __p_morceau, 0);
+    }
+    void report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx)
+    {
+        report(__p_action, __p_morceau, &__ctx);
+    }
 #ifdef ICE_CPP11
-				::Ice::AsyncResultPtr
-					begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_report(__p_action, __p_morceau, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
-					}
-				::Ice::AsyncResultPtr
-					begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_report(__p_action, __p_morceau, 0, ::Ice::newCallback(__completed, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
-					{
-						return begin_report(__p_action, __p_morceau, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
-					}
-				::Ice::AsyncResultPtr
-					begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
-					{
-						return begin_report(__p_action, __p_morceau, &__ctx, ::Ice::newCallback(__completed, __sent));
-					}
+    ::Ice::AsyncResultPtr
+    begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_report(__p_action, __p_morceau, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+    }
+    ::Ice::AsyncResultPtr
+    begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_report(__p_action, __p_morceau, 0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_report(__p_action, __p_morceau, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_report(__p_action, __p_morceau, &__ctx, ::Ice::newCallback(__completed, __sent));
+    }
 #endif
 
-				::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau)
-				{
-					return begin_report(__p_action, __p_morceau, 0, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau)
+    {
+        return begin_report(__p_action, __p_morceau, 0, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx)
-				{
-					return begin_report(__p_action, __p_morceau, &__ctx, ::IceInternal::__dummyCallback, 0);
-				}
+    ::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx)
+    {
+        return begin_report(__p_action, __p_morceau, &__ctx, ::IceInternal::__dummyCallback, 0);
+    }
 
-				::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_report(__p_action, __p_morceau, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_report(__p_action, __p_morceau, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_report(__p_action, __p_morceau, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_report(__p_action, __p_morceau, &__ctx, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::biblAudio::Callback_Monitor_reportPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_report(__p_action, __p_morceau, 0, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::biblAudio::Callback_Monitor_reportPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_report(__p_action, __p_morceau, 0, __del, __cookie);
+    }
 
-				::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx, const ::biblAudio::Callback_Monitor_reportPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
-				{
-					return begin_report(__p_action, __p_morceau, &__ctx, __del, __cookie);
-				}
+    ::Ice::AsyncResultPtr begin_report(const ::std::string& __p_action, const ::biblAudio::Morceau& __p_morceau, const ::Ice::Context& __ctx, const ::biblAudio::Callback_Monitor_reportPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_report(__p_action, __p_morceau, &__ctx, __del, __cookie);
+    }
 
-				void end_report(const ::Ice::AsyncResultPtr&);
+    void end_report(const ::Ice::AsyncResultPtr&);
+    
+private:
 
-			private:
+    void report(const ::std::string&, const ::biblAudio::Morceau&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_report(const ::std::string&, const ::biblAudio::Morceau&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_context(const ::Ice::Context& __context) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_context(__context).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_adapterId(const ::std::string& __id) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_adapterId(__id).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_endpoints(const ::Ice::EndpointSeq& __endpoints) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_endpoints(__endpoints).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_locatorCacheTimeout(int __timeout) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_locatorCacheTimeout(__timeout).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_connectionCached(bool __cached) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_connectionCached(__cached).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_endpointSelection(::Ice::EndpointSelectionType __est) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_endpointSelection(__est).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_secure(bool __secure) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_secure(__secure).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_preferSecure(bool __preferSecure) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_preferSecure(__preferSecure).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_router(const ::Ice::RouterPrx& __router) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_router(__router).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_locator(const ::Ice::LocatorPrx& __locator) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_locator(__locator).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_collocationOptimized(bool __co) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_collocationOptimized(__co).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_invocationTimeout(int __timeout) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_invocationTimeout(__timeout).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_twoway() const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_twoway().get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_oneway() const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_oneway().get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_batchOneway() const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_batchOneway().get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_datagram() const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_datagram().get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_batchDatagram() const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_batchDatagram().get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_compress(bool __compress) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_compress(__compress).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_timeout(int __timeout) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_timeout(__timeout).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_connectionId(const ::std::string& __id) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_connectionId(__id).get());
+    }
+    
+    ::IceInternal::ProxyHandle<Monitor> ice_encodingVersion(const ::Ice::EncodingVersion& __v) const
+    {
+        return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_encodingVersion(__v).get());
+    }
+    
+    static const ::std::string& ice_staticId();
 
-				void report(const ::std::string&, const ::biblAudio::Morceau&, const ::Ice::Context*);
-				::Ice::AsyncResultPtr begin_report(const ::std::string&, const ::biblAudio::Morceau&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+private: 
+    virtual ::IceProxy::Ice::Object* __newInstance() const;
+};
 
-			public:
-
-				::IceInternal::ProxyHandle<Monitor> ice_context(const ::Ice::Context& __context) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_context(__context).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_adapterId(const ::std::string& __id) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_adapterId(__id).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_endpoints(const ::Ice::EndpointSeq& __endpoints) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_endpoints(__endpoints).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_locatorCacheTimeout(int __timeout) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_locatorCacheTimeout(__timeout).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_connectionCached(bool __cached) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_connectionCached(__cached).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_endpointSelection(::Ice::EndpointSelectionType __est) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_endpointSelection(__est).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_secure(bool __secure) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_secure(__secure).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_preferSecure(bool __preferSecure) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_preferSecure(__preferSecure).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_router(const ::Ice::RouterPrx& __router) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_router(__router).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_locator(const ::Ice::LocatorPrx& __locator) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_locator(__locator).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_collocationOptimized(bool __co) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_collocationOptimized(__co).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_invocationTimeout(int __timeout) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_invocationTimeout(__timeout).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_twoway() const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_twoway().get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_oneway() const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_oneway().get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_batchOneway() const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_batchOneway().get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_datagram() const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_datagram().get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_batchDatagram() const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_batchDatagram().get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_compress(bool __compress) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_compress(__compress).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_timeout(int __timeout) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_timeout(__timeout).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_connectionId(const ::std::string& __id) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_connectionId(__id).get());
-				}
-
-				::IceInternal::ProxyHandle<Monitor> ice_encodingVersion(const ::Ice::EncodingVersion& __v) const
-				{
-					return dynamic_cast<Monitor*>(::IceProxy::Ice::Object::ice_encodingVersion(__v).get());
-				}
-
-				static const ::std::string& ice_staticId();
-
-			private: 
-				virtual ::IceProxy::Ice::Object* __newInstance() const;
-		};
-
-	}
+}
 
 }
 
 namespace biblAudio
 {
 
-	class ServeurIce : virtual public ::Ice::Object
-	{
-		public:
+class ServeurIce : virtual public ::Ice::Object
+{
+public:
 
-			typedef ServeurIcePrx ProxyType;
-			typedef ServeurIcePtr PointerType;
+    typedef ServeurIcePrx ProxyType;
+    typedef ServeurIcePtr PointerType;
 
-			virtual bool ice_isA(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) const;
-			virtual ::std::vector< ::std::string> ice_ids(const ::Ice::Current& = ::Ice::Current()) const;
-			virtual const ::std::string& ice_id(const ::Ice::Current& = ::Ice::Current()) const;
-			static const ::std::string& ice_staticId();
+    virtual bool ice_isA(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) const;
+    virtual ::std::vector< ::std::string> ice_ids(const ::Ice::Current& = ::Ice::Current()) const;
+    virtual const ::std::string& ice_id(const ::Ice::Current& = ::Ice::Current()) const;
+    static const ::std::string& ice_staticId();
 
-			virtual void afficherMorceaux(const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___afficherMorceaux(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual void afficherMorceaux(const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___afficherMorceaux(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual ::biblAudio::Morceau bRechercherMorceau(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___bRechercherMorceau(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual ::biblAudio::Morceau bRechercherMorceau(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___bRechercherMorceau(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual bool bAjoutMorceau(const ::std::string&, const ::std::string&, const ::std::string&, ::Ice::Int, ::Ice::Int, const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___bAjoutMorceau(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual bool bAjoutMorceau(const ::std::string&, const ::std::string&, const ::std::string&, ::Ice::Int, ::Ice::Int, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___bAjoutMorceau(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual bool bSuprMorceau(const ::std::string&, const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___bSuprMorceau(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual bool bSuprMorceau(const ::std::string&, const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___bSuprMorceau(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual ::biblAudio::mvectRecherche getMorceauxArt(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___getMorceauxArt(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual ::biblAudio::mvectRecherche getMorceauxArt(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___getMorceauxArt(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual ::biblAudio::mvectRecherche getMorceauxMorc(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___getMorceauxMorc(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual ::biblAudio::mvectRecherche getMorceauxMorc(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___getMorceauxMorc(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual void stopSound(const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___stopSound(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual void stopSound(const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___stopSound(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual void readSoundFic(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___readSoundFic(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual void readSoundFic(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___readSoundFic(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual void readSound(const ::std::string&, const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___readSound(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual void readSound(const ::std::string&, const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___readSound(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual ::Ice::DispatchStatus __dispatch(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual ::Ice::DispatchStatus __dispatch(::IceInternal::Incoming&, const ::Ice::Current&);
 
-		protected:
-			virtual void __writeImpl(::IceInternal::BasicStream*) const;
-			virtual void __readImpl(::IceInternal::BasicStream*);
-			using ::Ice::Object::__writeImpl;
-			using ::Ice::Object::__readImpl;
-	};
+protected:
+    virtual void __writeImpl(::IceInternal::BasicStream*) const;
+    virtual void __readImpl(::IceInternal::BasicStream*);
+    using ::Ice::Object::__writeImpl;
+    using ::Ice::Object::__readImpl;
+};
 
-	inline bool operator==(const ServeurIce& l, const ServeurIce& r)
-	{
-		return static_cast<const ::Ice::Object&>(l) == static_cast<const ::Ice::Object&>(r);
-	}
+inline bool operator==(const ServeurIce& l, const ServeurIce& r)
+{
+    return static_cast<const ::Ice::Object&>(l) == static_cast<const ::Ice::Object&>(r);
+}
 
-	inline bool operator<(const ServeurIce& l, const ServeurIce& r)
-	{
-		return static_cast<const ::Ice::Object&>(l) < static_cast<const ::Ice::Object&>(r);
-	}
+inline bool operator<(const ServeurIce& l, const ServeurIce& r)
+{
+    return static_cast<const ::Ice::Object&>(l) < static_cast<const ::Ice::Object&>(r);
+}
 
-	class Monitor : virtual public ::Ice::Object
-	{
-		public:
+class Monitor : virtual public ::Ice::Object
+{
+public:
 
-			typedef MonitorPrx ProxyType;
-			typedef MonitorPtr PointerType;
+    typedef MonitorPrx ProxyType;
+    typedef MonitorPtr PointerType;
 
-			virtual bool ice_isA(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) const;
-			virtual ::std::vector< ::std::string> ice_ids(const ::Ice::Current& = ::Ice::Current()) const;
-			virtual const ::std::string& ice_id(const ::Ice::Current& = ::Ice::Current()) const;
-			static const ::std::string& ice_staticId();
+    virtual bool ice_isA(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) const;
+    virtual ::std::vector< ::std::string> ice_ids(const ::Ice::Current& = ::Ice::Current()) const;
+    virtual const ::std::string& ice_id(const ::Ice::Current& = ::Ice::Current()) const;
+    static const ::std::string& ice_staticId();
 
-			virtual void report(const ::std::string&, const ::biblAudio::Morceau&, const ::Ice::Current& = ::Ice::Current()) = 0;
-			::Ice::DispatchStatus ___report(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual void report(const ::std::string&, const ::biblAudio::Morceau&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___report(::IceInternal::Incoming&, const ::Ice::Current&);
 
-			virtual ::Ice::DispatchStatus __dispatch(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual ::Ice::DispatchStatus __dispatch(::IceInternal::Incoming&, const ::Ice::Current&);
 
-		protected:
-			virtual void __writeImpl(::IceInternal::BasicStream*) const;
-			virtual void __readImpl(::IceInternal::BasicStream*);
-			using ::Ice::Object::__writeImpl;
-			using ::Ice::Object::__readImpl;
-	};
+protected:
+    virtual void __writeImpl(::IceInternal::BasicStream*) const;
+    virtual void __readImpl(::IceInternal::BasicStream*);
+    using ::Ice::Object::__writeImpl;
+    using ::Ice::Object::__readImpl;
+};
 
-	inline bool operator==(const Monitor& l, const Monitor& r)
-	{
-		return static_cast<const ::Ice::Object&>(l) == static_cast<const ::Ice::Object&>(r);
-	}
+inline bool operator==(const Monitor& l, const Monitor& r)
+{
+    return static_cast<const ::Ice::Object&>(l) == static_cast<const ::Ice::Object&>(r);
+}
 
-	inline bool operator<(const Monitor& l, const Monitor& r)
-	{
-		return static_cast<const ::Ice::Object&>(l) < static_cast<const ::Ice::Object&>(r);
-	}
+inline bool operator<(const Monitor& l, const Monitor& r)
+{
+    return static_cast<const ::Ice::Object&>(l) < static_cast<const ::Ice::Object&>(r);
+}
 
 }
 
 namespace biblAudio
 {
 
-	template<class T>
-		class CallbackNC_ServeurIce_afficherMorceaux : public Callback_ServeurIce_afficherMorceaux_Base, public ::IceInternal::OnewayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)();
-
-			CallbackNC_ServeurIce_afficherMorceaux(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T> Callback_ServeurIce_afficherMorceauxPtr
-		newCallback_ServeurIce_afficherMorceaux(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_afficherMorceaux<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_afficherMorceauxPtr
-		newCallback_ServeurIce_afficherMorceaux(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_afficherMorceaux<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_afficherMorceauxPtr
-		newCallback_ServeurIce_afficherMorceaux(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_afficherMorceaux<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_afficherMorceauxPtr
-		newCallback_ServeurIce_afficherMorceaux(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_afficherMorceaux<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_ServeurIce_afficherMorceaux : public Callback_ServeurIce_afficherMorceaux_Base, public ::IceInternal::OnewayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(const CT&);
-
-			Callback_ServeurIce_afficherMorceaux(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T, typename CT> Callback_ServeurIce_afficherMorceauxPtr
-		newCallback_ServeurIce_afficherMorceaux(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_afficherMorceaux<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_afficherMorceauxPtr
-		newCallback_ServeurIce_afficherMorceaux(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_afficherMorceaux<T, CT>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_afficherMorceauxPtr
-		newCallback_ServeurIce_afficherMorceaux(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_afficherMorceaux<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_afficherMorceauxPtr
-		newCallback_ServeurIce_afficherMorceaux(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_afficherMorceaux<T, CT>(instance, 0, excb, sentcb);
-		}
-
-	template<class T>
-		class CallbackNC_ServeurIce_bRechercherMorceau : public Callback_ServeurIce_bRechercherMorceau_Base, public ::IceInternal::TwowayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)(const ::biblAudio::Morceau&);
-
-			CallbackNC_ServeurIce_bRechercherMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				::biblAudio::Morceau __ret;
-				try
-				{
-					__ret = __proxy->end_bRechercherMorceau(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::CallbackNC<T>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T> Callback_ServeurIce_bRechercherMorceauPtr
-		newCallback_ServeurIce_bRechercherMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::Morceau&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_bRechercherMorceau<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_bRechercherMorceauPtr
-		newCallback_ServeurIce_bRechercherMorceau(T* instance, void (T::*cb)(const ::biblAudio::Morceau&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_bRechercherMorceau<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_ServeurIce_bRechercherMorceau : public Callback_ServeurIce_bRechercherMorceau_Base, public ::IceInternal::TwowayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(const ::biblAudio::Morceau&, const CT&);
-
-			Callback_ServeurIce_bRechercherMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				::biblAudio::Morceau __ret;
-				try
-				{
-					__ret = __proxy->end_bRechercherMorceau(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::Callback<T, CT>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T, typename CT> Callback_ServeurIce_bRechercherMorceauPtr
-		newCallback_ServeurIce_bRechercherMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::Morceau&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_bRechercherMorceau<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_bRechercherMorceauPtr
-		newCallback_ServeurIce_bRechercherMorceau(T* instance, void (T::*cb)(const ::biblAudio::Morceau&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_bRechercherMorceau<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T>
-		class CallbackNC_ServeurIce_bAjoutMorceau : public Callback_ServeurIce_bAjoutMorceau_Base, public ::IceInternal::TwowayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)(bool);
-
-			CallbackNC_ServeurIce_bAjoutMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				bool __ret;
-				try
-				{
-					__ret = __proxy->end_bAjoutMorceau(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::CallbackNC<T>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T> Callback_ServeurIce_bAjoutMorceauPtr
-		newCallback_ServeurIce_bAjoutMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_bAjoutMorceau<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_bAjoutMorceauPtr
-		newCallback_ServeurIce_bAjoutMorceau(T* instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_bAjoutMorceau<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_ServeurIce_bAjoutMorceau : public Callback_ServeurIce_bAjoutMorceau_Base, public ::IceInternal::TwowayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(bool, const CT&);
-
-			Callback_ServeurIce_bAjoutMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				bool __ret;
-				try
-				{
-					__ret = __proxy->end_bAjoutMorceau(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::Callback<T, CT>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T, typename CT> Callback_ServeurIce_bAjoutMorceauPtr
-		newCallback_ServeurIce_bAjoutMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_bAjoutMorceau<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_bAjoutMorceauPtr
-		newCallback_ServeurIce_bAjoutMorceau(T* instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_bAjoutMorceau<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T>
-		class CallbackNC_ServeurIce_bSuprMorceau : public Callback_ServeurIce_bSuprMorceau_Base, public ::IceInternal::TwowayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)(bool);
-
-			CallbackNC_ServeurIce_bSuprMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				bool __ret;
-				try
-				{
-					__ret = __proxy->end_bSuprMorceau(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::CallbackNC<T>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T> Callback_ServeurIce_bSuprMorceauPtr
-		newCallback_ServeurIce_bSuprMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_bSuprMorceau<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_bSuprMorceauPtr
-		newCallback_ServeurIce_bSuprMorceau(T* instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_bSuprMorceau<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_ServeurIce_bSuprMorceau : public Callback_ServeurIce_bSuprMorceau_Base, public ::IceInternal::TwowayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(bool, const CT&);
-
-			Callback_ServeurIce_bSuprMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				bool __ret;
-				try
-				{
-					__ret = __proxy->end_bSuprMorceau(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::Callback<T, CT>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T, typename CT> Callback_ServeurIce_bSuprMorceauPtr
-		newCallback_ServeurIce_bSuprMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_bSuprMorceau<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_bSuprMorceauPtr
-		newCallback_ServeurIce_bSuprMorceau(T* instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_bSuprMorceau<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T>
-		class CallbackNC_ServeurIce_getMorceauxArt : public Callback_ServeurIce_getMorceauxArt_Base, public ::IceInternal::TwowayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)(const ::biblAudio::mvectRecherche&);
-
-			CallbackNC_ServeurIce_getMorceauxArt(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				::biblAudio::mvectRecherche __ret;
-				try
-				{
-					__ret = __proxy->end_getMorceauxArt(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::CallbackNC<T>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T> Callback_ServeurIce_getMorceauxArtPtr
-		newCallback_ServeurIce_getMorceauxArt(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::mvectRecherche&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_getMorceauxArt<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_getMorceauxArtPtr
-		newCallback_ServeurIce_getMorceauxArt(T* instance, void (T::*cb)(const ::biblAudio::mvectRecherche&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_getMorceauxArt<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_ServeurIce_getMorceauxArt : public Callback_ServeurIce_getMorceauxArt_Base, public ::IceInternal::TwowayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(const ::biblAudio::mvectRecherche&, const CT&);
-
-			Callback_ServeurIce_getMorceauxArt(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				::biblAudio::mvectRecherche __ret;
-				try
-				{
-					__ret = __proxy->end_getMorceauxArt(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::Callback<T, CT>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T, typename CT> Callback_ServeurIce_getMorceauxArtPtr
-		newCallback_ServeurIce_getMorceauxArt(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::mvectRecherche&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_getMorceauxArt<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_getMorceauxArtPtr
-		newCallback_ServeurIce_getMorceauxArt(T* instance, void (T::*cb)(const ::biblAudio::mvectRecherche&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_getMorceauxArt<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T>
-		class CallbackNC_ServeurIce_getMorceauxMorc : public Callback_ServeurIce_getMorceauxMorc_Base, public ::IceInternal::TwowayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)(const ::biblAudio::mvectRecherche&);
-
-			CallbackNC_ServeurIce_getMorceauxMorc(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				::biblAudio::mvectRecherche __ret;
-				try
-				{
-					__ret = __proxy->end_getMorceauxMorc(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::CallbackNC<T>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T> Callback_ServeurIce_getMorceauxMorcPtr
-		newCallback_ServeurIce_getMorceauxMorc(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::mvectRecherche&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_getMorceauxMorc<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_getMorceauxMorcPtr
-		newCallback_ServeurIce_getMorceauxMorc(T* instance, void (T::*cb)(const ::biblAudio::mvectRecherche&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_getMorceauxMorc<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_ServeurIce_getMorceauxMorc : public Callback_ServeurIce_getMorceauxMorc_Base, public ::IceInternal::TwowayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(const ::biblAudio::mvectRecherche&, const CT&);
-
-			Callback_ServeurIce_getMorceauxMorc(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
-			{
-			}
-
-			virtual void completed(const ::Ice::AsyncResultPtr& __result) const
-			{
-				::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
-				::biblAudio::mvectRecherche __ret;
-				try
-				{
-					__ret = __proxy->end_getMorceauxMorc(__result);
-				}
-				catch(const ::Ice::Exception& ex)
-				{
-					::IceInternal::Callback<T, CT>::exception(__result, ex);
-					return;
-				}
-				if(_response)
-				{
-					(::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
-				}
-			}
-
-		private:
-
-			Response _response;
-	};
-
-	template<class T, typename CT> Callback_ServeurIce_getMorceauxMorcPtr
-		newCallback_ServeurIce_getMorceauxMorc(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::mvectRecherche&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_getMorceauxMorc<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_getMorceauxMorcPtr
-		newCallback_ServeurIce_getMorceauxMorc(T* instance, void (T::*cb)(const ::biblAudio::mvectRecherche&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_getMorceauxMorc<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T>
-		class CallbackNC_ServeurIce_stopSound : public Callback_ServeurIce_stopSound_Base, public ::IceInternal::OnewayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)();
-
-			CallbackNC_ServeurIce_stopSound(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T> Callback_ServeurIce_stopSoundPtr
-		newCallback_ServeurIce_stopSound(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_stopSound<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_stopSoundPtr
-		newCallback_ServeurIce_stopSound(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_stopSound<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_stopSoundPtr
-		newCallback_ServeurIce_stopSound(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_stopSound<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_stopSoundPtr
-		newCallback_ServeurIce_stopSound(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_stopSound<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_ServeurIce_stopSound : public Callback_ServeurIce_stopSound_Base, public ::IceInternal::OnewayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(const CT&);
-
-			Callback_ServeurIce_stopSound(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T, typename CT> Callback_ServeurIce_stopSoundPtr
-		newCallback_ServeurIce_stopSound(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_stopSound<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_stopSoundPtr
-		newCallback_ServeurIce_stopSound(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_stopSound<T, CT>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_stopSoundPtr
-		newCallback_ServeurIce_stopSound(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_stopSound<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_stopSoundPtr
-		newCallback_ServeurIce_stopSound(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_stopSound<T, CT>(instance, 0, excb, sentcb);
-		}
-
-	template<class T>
-		class CallbackNC_ServeurIce_readSoundFic : public Callback_ServeurIce_readSoundFic_Base, public ::IceInternal::OnewayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)();
-
-			CallbackNC_ServeurIce_readSoundFic(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T> Callback_ServeurIce_readSoundFicPtr
-		newCallback_ServeurIce_readSoundFic(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_readSoundFic<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_readSoundFicPtr
-		newCallback_ServeurIce_readSoundFic(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_readSoundFic<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_readSoundFicPtr
-		newCallback_ServeurIce_readSoundFic(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_readSoundFic<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_readSoundFicPtr
-		newCallback_ServeurIce_readSoundFic(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_readSoundFic<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_ServeurIce_readSoundFic : public Callback_ServeurIce_readSoundFic_Base, public ::IceInternal::OnewayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(const CT&);
-
-			Callback_ServeurIce_readSoundFic(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T, typename CT> Callback_ServeurIce_readSoundFicPtr
-		newCallback_ServeurIce_readSoundFic(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_readSoundFic<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_readSoundFicPtr
-		newCallback_ServeurIce_readSoundFic(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_readSoundFic<T, CT>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_readSoundFicPtr
-		newCallback_ServeurIce_readSoundFic(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_readSoundFic<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_readSoundFicPtr
-		newCallback_ServeurIce_readSoundFic(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_readSoundFic<T, CT>(instance, 0, excb, sentcb);
-		}
-
-	template<class T>
-		class CallbackNC_ServeurIce_readSound : public Callback_ServeurIce_readSound_Base, public ::IceInternal::OnewayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)();
-
-			CallbackNC_ServeurIce_readSound(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T> Callback_ServeurIce_readSoundPtr
-		newCallback_ServeurIce_readSound(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_readSound<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_readSoundPtr
-		newCallback_ServeurIce_readSound(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_readSound<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_readSoundPtr
-		newCallback_ServeurIce_readSound(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_readSound<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_ServeurIce_readSoundPtr
-		newCallback_ServeurIce_readSound(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_ServeurIce_readSound<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_ServeurIce_readSound : public Callback_ServeurIce_readSound_Base, public ::IceInternal::OnewayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(const CT&);
-
-			Callback_ServeurIce_readSound(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T, typename CT> Callback_ServeurIce_readSoundPtr
-		newCallback_ServeurIce_readSound(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_readSound<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_readSoundPtr
-		newCallback_ServeurIce_readSound(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_readSound<T, CT>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_readSoundPtr
-		newCallback_ServeurIce_readSound(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_readSound<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_ServeurIce_readSoundPtr
-		newCallback_ServeurIce_readSound(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_ServeurIce_readSound<T, CT>(instance, 0, excb, sentcb);
-		}
-
-	template<class T>
-		class CallbackNC_Monitor_report : public Callback_Monitor_report_Base, public ::IceInternal::OnewayCallbackNC<T>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception&);
-			typedef void (T::*Sent)(bool);
-			typedef void (T::*Response)();
-
-			CallbackNC_Monitor_report(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T> Callback_Monitor_reportPtr
-		newCallback_Monitor_report(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_Monitor_report<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_Monitor_reportPtr
-		newCallback_Monitor_report(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_Monitor_report<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T> Callback_Monitor_reportPtr
-		newCallback_Monitor_report(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_Monitor_report<T>(instance, cb, excb, sentcb);
-		}
-
-	template<class T> Callback_Monitor_reportPtr
-		newCallback_Monitor_report(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
-		{
-			return new CallbackNC_Monitor_report<T>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT>
-		class Callback_Monitor_report : public Callback_Monitor_report_Base, public ::IceInternal::OnewayCallback<T, CT>
-	{
-		public:
-
-			typedef IceUtil::Handle<T> TPtr;
-
-			typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
-			typedef void (T::*Sent)(bool , const CT&);
-			typedef void (T::*Response)(const CT&);
-
-			Callback_Monitor_report(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-				: ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
-			{
-			}
-	};
-
-	template<class T, typename CT> Callback_Monitor_reportPtr
-		newCallback_Monitor_report(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_Monitor_report<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_Monitor_reportPtr
-		newCallback_Monitor_report(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_Monitor_report<T, CT>(instance, 0, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_Monitor_reportPtr
-		newCallback_Monitor_report(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_Monitor_report<T, CT>(instance, cb, excb, sentcb);
-		}
-
-	template<class T, typename CT> Callback_Monitor_reportPtr
-		newCallback_Monitor_report(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
-		{
-			return new Callback_Monitor_report<T, CT>(instance, 0, excb, sentcb);
-		}
+template<class T>
+class CallbackNC_ServeurIce_afficherMorceaux : public Callback_ServeurIce_afficherMorceaux_Base, public ::IceInternal::OnewayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)();
+
+    CallbackNC_ServeurIce_afficherMorceaux(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T> Callback_ServeurIce_afficherMorceauxPtr
+newCallback_ServeurIce_afficherMorceaux(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_afficherMorceaux<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_afficherMorceauxPtr
+newCallback_ServeurIce_afficherMorceaux(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_afficherMorceaux<T>(instance, 0, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_afficherMorceauxPtr
+newCallback_ServeurIce_afficherMorceaux(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_afficherMorceaux<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_afficherMorceauxPtr
+newCallback_ServeurIce_afficherMorceaux(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_afficherMorceaux<T>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_ServeurIce_afficherMorceaux : public Callback_ServeurIce_afficherMorceaux_Base, public ::IceInternal::OnewayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(const CT&);
+
+    Callback_ServeurIce_afficherMorceaux(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T, typename CT> Callback_ServeurIce_afficherMorceauxPtr
+newCallback_ServeurIce_afficherMorceaux(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_afficherMorceaux<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_afficherMorceauxPtr
+newCallback_ServeurIce_afficherMorceaux(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_afficherMorceaux<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_afficherMorceauxPtr
+newCallback_ServeurIce_afficherMorceaux(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_afficherMorceaux<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_afficherMorceauxPtr
+newCallback_ServeurIce_afficherMorceaux(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_afficherMorceaux<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_ServeurIce_bRechercherMorceau : public Callback_ServeurIce_bRechercherMorceau_Base, public ::IceInternal::TwowayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)(const ::biblAudio::Morceau&);
+
+    CallbackNC_ServeurIce_bRechercherMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        ::biblAudio::Morceau __ret;
+        try
+        {
+            __ret = __proxy->end_bRechercherMorceau(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::CallbackNC<T>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T> Callback_ServeurIce_bRechercherMorceauPtr
+newCallback_ServeurIce_bRechercherMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::Morceau&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_bRechercherMorceau<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_bRechercherMorceauPtr
+newCallback_ServeurIce_bRechercherMorceau(T* instance, void (T::*cb)(const ::biblAudio::Morceau&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_bRechercherMorceau<T>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_ServeurIce_bRechercherMorceau : public Callback_ServeurIce_bRechercherMorceau_Base, public ::IceInternal::TwowayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(const ::biblAudio::Morceau&, const CT&);
+
+    Callback_ServeurIce_bRechercherMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        ::biblAudio::Morceau __ret;
+        try
+        {
+            __ret = __proxy->end_bRechercherMorceau(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::Callback<T, CT>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T, typename CT> Callback_ServeurIce_bRechercherMorceauPtr
+newCallback_ServeurIce_bRechercherMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::Morceau&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_bRechercherMorceau<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_bRechercherMorceauPtr
+newCallback_ServeurIce_bRechercherMorceau(T* instance, void (T::*cb)(const ::biblAudio::Morceau&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_bRechercherMorceau<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_ServeurIce_bAjoutMorceau : public Callback_ServeurIce_bAjoutMorceau_Base, public ::IceInternal::TwowayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)(bool);
+
+    CallbackNC_ServeurIce_bAjoutMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        bool __ret;
+        try
+        {
+            __ret = __proxy->end_bAjoutMorceau(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::CallbackNC<T>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T> Callback_ServeurIce_bAjoutMorceauPtr
+newCallback_ServeurIce_bAjoutMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_bAjoutMorceau<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_bAjoutMorceauPtr
+newCallback_ServeurIce_bAjoutMorceau(T* instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_bAjoutMorceau<T>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_ServeurIce_bAjoutMorceau : public Callback_ServeurIce_bAjoutMorceau_Base, public ::IceInternal::TwowayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(bool, const CT&);
+
+    Callback_ServeurIce_bAjoutMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        bool __ret;
+        try
+        {
+            __ret = __proxy->end_bAjoutMorceau(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::Callback<T, CT>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T, typename CT> Callback_ServeurIce_bAjoutMorceauPtr
+newCallback_ServeurIce_bAjoutMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_bAjoutMorceau<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_bAjoutMorceauPtr
+newCallback_ServeurIce_bAjoutMorceau(T* instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_bAjoutMorceau<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_ServeurIce_bSuprMorceau : public Callback_ServeurIce_bSuprMorceau_Base, public ::IceInternal::TwowayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)(bool);
+
+    CallbackNC_ServeurIce_bSuprMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        bool __ret;
+        try
+        {
+            __ret = __proxy->end_bSuprMorceau(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::CallbackNC<T>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T> Callback_ServeurIce_bSuprMorceauPtr
+newCallback_ServeurIce_bSuprMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_bSuprMorceau<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_bSuprMorceauPtr
+newCallback_ServeurIce_bSuprMorceau(T* instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_bSuprMorceau<T>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_ServeurIce_bSuprMorceau : public Callback_ServeurIce_bSuprMorceau_Base, public ::IceInternal::TwowayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(bool, const CT&);
+
+    Callback_ServeurIce_bSuprMorceau(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        bool __ret;
+        try
+        {
+            __ret = __proxy->end_bSuprMorceau(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::Callback<T, CT>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T, typename CT> Callback_ServeurIce_bSuprMorceauPtr
+newCallback_ServeurIce_bSuprMorceau(const IceUtil::Handle<T>& instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_bSuprMorceau<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_bSuprMorceauPtr
+newCallback_ServeurIce_bSuprMorceau(T* instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_bSuprMorceau<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_ServeurIce_getMorceauxArt : public Callback_ServeurIce_getMorceauxArt_Base, public ::IceInternal::TwowayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)(const ::biblAudio::mvectRecherche&);
+
+    CallbackNC_ServeurIce_getMorceauxArt(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        ::biblAudio::mvectRecherche __ret;
+        try
+        {
+            __ret = __proxy->end_getMorceauxArt(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::CallbackNC<T>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T> Callback_ServeurIce_getMorceauxArtPtr
+newCallback_ServeurIce_getMorceauxArt(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::mvectRecherche&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_getMorceauxArt<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_getMorceauxArtPtr
+newCallback_ServeurIce_getMorceauxArt(T* instance, void (T::*cb)(const ::biblAudio::mvectRecherche&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_getMorceauxArt<T>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_ServeurIce_getMorceauxArt : public Callback_ServeurIce_getMorceauxArt_Base, public ::IceInternal::TwowayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(const ::biblAudio::mvectRecherche&, const CT&);
+
+    Callback_ServeurIce_getMorceauxArt(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        ::biblAudio::mvectRecherche __ret;
+        try
+        {
+            __ret = __proxy->end_getMorceauxArt(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::Callback<T, CT>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T, typename CT> Callback_ServeurIce_getMorceauxArtPtr
+newCallback_ServeurIce_getMorceauxArt(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::mvectRecherche&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_getMorceauxArt<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_getMorceauxArtPtr
+newCallback_ServeurIce_getMorceauxArt(T* instance, void (T::*cb)(const ::biblAudio::mvectRecherche&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_getMorceauxArt<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_ServeurIce_getMorceauxMorc : public Callback_ServeurIce_getMorceauxMorc_Base, public ::IceInternal::TwowayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)(const ::biblAudio::mvectRecherche&);
+
+    CallbackNC_ServeurIce_getMorceauxMorc(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        ::biblAudio::mvectRecherche __ret;
+        try
+        {
+            __ret = __proxy->end_getMorceauxMorc(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::CallbackNC<T>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::CallbackNC<T>::_callback.get()->*_response)(__ret);
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T> Callback_ServeurIce_getMorceauxMorcPtr
+newCallback_ServeurIce_getMorceauxMorc(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::mvectRecherche&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_getMorceauxMorc<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_getMorceauxMorcPtr
+newCallback_ServeurIce_getMorceauxMorc(T* instance, void (T::*cb)(const ::biblAudio::mvectRecherche&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_getMorceauxMorc<T>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_ServeurIce_getMorceauxMorc : public Callback_ServeurIce_getMorceauxMorc_Base, public ::IceInternal::TwowayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(const ::biblAudio::mvectRecherche&, const CT&);
+
+    Callback_ServeurIce_getMorceauxMorc(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), _response(cb)
+    {
+    }
+
+    virtual void completed(const ::Ice::AsyncResultPtr& __result) const
+    {
+        ::biblAudio::ServeurIcePrx __proxy = ::biblAudio::ServeurIcePrx::uncheckedCast(__result->getProxy());
+        ::biblAudio::mvectRecherche __ret;
+        try
+        {
+            __ret = __proxy->end_getMorceauxMorc(__result);
+        }
+        catch(const ::Ice::Exception& ex)
+        {
+            ::IceInternal::Callback<T, CT>::exception(__result, ex);
+            return;
+        }
+        if(_response)
+        {
+            (::IceInternal::Callback<T, CT>::_callback.get()->*_response)(__ret, CT::dynamicCast(__result->getCookie()));
+        }
+    }
+
+    private:
+
+    Response _response;
+};
+
+template<class T, typename CT> Callback_ServeurIce_getMorceauxMorcPtr
+newCallback_ServeurIce_getMorceauxMorc(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::biblAudio::mvectRecherche&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_getMorceauxMorc<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_getMorceauxMorcPtr
+newCallback_ServeurIce_getMorceauxMorc(T* instance, void (T::*cb)(const ::biblAudio::mvectRecherche&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_getMorceauxMorc<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_ServeurIce_stopSound : public Callback_ServeurIce_stopSound_Base, public ::IceInternal::OnewayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)();
+
+    CallbackNC_ServeurIce_stopSound(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T> Callback_ServeurIce_stopSoundPtr
+newCallback_ServeurIce_stopSound(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_stopSound<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_stopSoundPtr
+newCallback_ServeurIce_stopSound(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_stopSound<T>(instance, 0, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_stopSoundPtr
+newCallback_ServeurIce_stopSound(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_stopSound<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_stopSoundPtr
+newCallback_ServeurIce_stopSound(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_stopSound<T>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_ServeurIce_stopSound : public Callback_ServeurIce_stopSound_Base, public ::IceInternal::OnewayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(const CT&);
+
+    Callback_ServeurIce_stopSound(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T, typename CT> Callback_ServeurIce_stopSoundPtr
+newCallback_ServeurIce_stopSound(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_stopSound<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_stopSoundPtr
+newCallback_ServeurIce_stopSound(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_stopSound<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_stopSoundPtr
+newCallback_ServeurIce_stopSound(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_stopSound<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_stopSoundPtr
+newCallback_ServeurIce_stopSound(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_stopSound<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_ServeurIce_readSoundFic : public Callback_ServeurIce_readSoundFic_Base, public ::IceInternal::OnewayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)();
+
+    CallbackNC_ServeurIce_readSoundFic(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T> Callback_ServeurIce_readSoundFicPtr
+newCallback_ServeurIce_readSoundFic(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_readSoundFic<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_readSoundFicPtr
+newCallback_ServeurIce_readSoundFic(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_readSoundFic<T>(instance, 0, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_readSoundFicPtr
+newCallback_ServeurIce_readSoundFic(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_readSoundFic<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_readSoundFicPtr
+newCallback_ServeurIce_readSoundFic(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_readSoundFic<T>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_ServeurIce_readSoundFic : public Callback_ServeurIce_readSoundFic_Base, public ::IceInternal::OnewayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(const CT&);
+
+    Callback_ServeurIce_readSoundFic(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T, typename CT> Callback_ServeurIce_readSoundFicPtr
+newCallback_ServeurIce_readSoundFic(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_readSoundFic<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_readSoundFicPtr
+newCallback_ServeurIce_readSoundFic(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_readSoundFic<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_readSoundFicPtr
+newCallback_ServeurIce_readSoundFic(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_readSoundFic<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_readSoundFicPtr
+newCallback_ServeurIce_readSoundFic(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_readSoundFic<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_ServeurIce_readSound : public Callback_ServeurIce_readSound_Base, public ::IceInternal::OnewayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)();
+
+    CallbackNC_ServeurIce_readSound(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T> Callback_ServeurIce_readSoundPtr
+newCallback_ServeurIce_readSound(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_readSound<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_readSoundPtr
+newCallback_ServeurIce_readSound(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_readSound<T>(instance, 0, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_readSoundPtr
+newCallback_ServeurIce_readSound(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_readSound<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_ServeurIce_readSoundPtr
+newCallback_ServeurIce_readSound(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_ServeurIce_readSound<T>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_ServeurIce_readSound : public Callback_ServeurIce_readSound_Base, public ::IceInternal::OnewayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(const CT&);
+
+    Callback_ServeurIce_readSound(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T, typename CT> Callback_ServeurIce_readSoundPtr
+newCallback_ServeurIce_readSound(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_readSound<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_readSoundPtr
+newCallback_ServeurIce_readSound(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_readSound<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_readSoundPtr
+newCallback_ServeurIce_readSound(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_readSound<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_ServeurIce_readSoundPtr
+newCallback_ServeurIce_readSound(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_ServeurIce_readSound<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_Monitor_report : public Callback_Monitor_report_Base, public ::IceInternal::OnewayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)();
+
+    CallbackNC_Monitor_report(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T> Callback_Monitor_reportPtr
+newCallback_Monitor_report(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_Monitor_report<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_Monitor_reportPtr
+newCallback_Monitor_report(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_Monitor_report<T>(instance, 0, excb, sentcb);
+}
+
+template<class T> Callback_Monitor_reportPtr
+newCallback_Monitor_report(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_Monitor_report<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_Monitor_reportPtr
+newCallback_Monitor_report(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_Monitor_report<T>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_Monitor_report : public Callback_Monitor_report_Base, public ::IceInternal::OnewayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(const CT&);
+
+    Callback_Monitor_report(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T, typename CT> Callback_Monitor_reportPtr
+newCallback_Monitor_report(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_Monitor_report<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_Monitor_reportPtr
+newCallback_Monitor_report(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_Monitor_report<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_Monitor_reportPtr
+newCallback_Monitor_report(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_Monitor_report<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_Monitor_reportPtr
+newCallback_Monitor_report(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_Monitor_report<T, CT>(instance, 0, excb, sentcb);
+}
 
 }
 

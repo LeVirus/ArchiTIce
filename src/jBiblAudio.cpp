@@ -122,7 +122,7 @@ bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sN
 	morceau.muiDateSortie = uiDateSortie;
 	morceau.muiDureeMorceau = uiDureeMorc;
 	mmapMorceaux . insert( std::pair< std::string, biblAudio::Morceau > ( sNomArt, morceau ) );
-	monitor.report("add", morceau);
+	monitor->report("add", morceau);
 	std::cout << "Morceau ajouté"<<sNomMorc<<"\n";
 	return true;
 }
@@ -134,7 +134,7 @@ bool BiblAudio::bSuprMorceau( const std::string &sNomArt,const std::string &sNom
 	for( biblAudio::mmapMorceaux::iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it ){
 		if((*it).first == sNomMorc && (*it).second.msNomArtiste == sNomArt)
 		{
-			monitor.report("del", (*it).second);
+			monitor->report("del", (*it).second);
 			mmapMorceaux.erase(it);
 			std::cout << "Morceau supprimé::"<<sNomMorc<<"\n";
 			return true;
