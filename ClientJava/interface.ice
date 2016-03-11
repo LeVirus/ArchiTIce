@@ -25,4 +25,8 @@ module biblAudio
 	void readSoundFic(string pathToFic);
 	void readSound(string sNomMorceau, string sNomArtiste);
     };
+
+    interface Monitor {
+	void report(string action, Morceau morceau);
+    };
 };

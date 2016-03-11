@@ -1,6 +1,12 @@
 import java.util.Scanner;
 
 
+ class MonitorI extends biblAudio._MonitorDisp {
+	    @Override
+		    public void report(String action, Morceau morceau) {
+			System.out.print(action+"\n");
+		    }
+}
 
 public class Client {
     public static void
@@ -21,7 +27,7 @@ public class Client {
 
 		Ice.ObjectAdapter/*Ptr*/ adapter = ic.createObjectAdapter("MonitorAdapter");
 
-		MonitorPtr monitor = new MonitorI();
+		biblAudio.Monitor monitor = new MonitorI();
 		Ice.ObjectPrx proxy = adapter.addWithUUID(monitor).ice_oneway();
 		adapter.activate();
 
