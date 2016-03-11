@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 
- class MonitorI extends biblAudio._MonitorDisp {
+class MonitorI extends biblAudio._MonitorDisp {
 	    @Override
-		    public void report(String action, Morceau morceau) {
+		    public void report(String action, biblAudio.Morceau morceau, Ice.Current __current) {
 			System.out.print(action+"\n");
 		    }
 }
@@ -25,7 +25,7 @@ public class Client {
 		IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
 
 
-		Ice.ObjectAdapter/*Ptr*/ adapter = ic.createObjectAdapter("MonitorAdapter");
+		Ice.ObjectAdapter adapter = ic.createObjectAdapter("MonitorAdapter");
 
 		biblAudio.Monitor monitor = new MonitorI();
 		Ice.ObjectPrx proxy = adapter.addWithUUID(monitor).ice_oneway();
