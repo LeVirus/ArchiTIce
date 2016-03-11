@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+
+
 public class Client {
     public static void
 	main(String[] args)
@@ -17,15 +19,15 @@ public class Client {
 		IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
 
 
-		Ice.ObjectAdapterPtr adapter = ic.createObjectAdapter("MonitorAdapter");
+		Ice.ObjectAdapter/*Ptr*/ adapter = ic.createObjectAdapter("MonitorAdapter");
 
-		Monitor monitor = new MonitorI();
+		MonitorPtr monitor = new MonitorI();
 		Ice.ObjectPrx proxy = adapter.addWithUUID(monitor).ice_oneway();
 		adapter.activate();
 
 		IceStorm.TopicPrx topic = null;
 		try {
-		    topic = topicManager.retrieve("Weather");
+		    topic = topicManager.retrieve("MusicTopic");
 		    java.util.Map qos = null;
 		    topic.subscribeAndGetPublisher(qos, proxy);
 		}
