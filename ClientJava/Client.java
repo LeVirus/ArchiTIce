@@ -8,10 +8,38 @@ public class Client {
 	    Ice.Communicator ic = null;
 	    try {
 		ic = Ice.Util.initialize(args);
-                Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");
+		Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");
 		biblAudio.ServeurIcePrx printer = biblAudio.ServeurIcePrxHelper.checkedCast(base);
 		if (printer == null)
 		    throw new Error("Invalid proxy");
+
+		Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
+		IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
+
+
+		Ice.ObjectAdapterPtr adapter = ic.createObjectAdapter("MonitorAdapter");
+
+		Monitor monitor = new MonitorI();
+		Ice.ObjectPrx proxy = adapter.addWithUUID(monitor).ice_oneway();
+		adapter.activate();
+
+		IceStorm.TopicPrx topic = null;
+		try {
+		    topic = topicManager.retrieve("Weather");
+		    java.util.Map qos = null;
+		    topic.subscribeAndGetPublisher(qos, proxy);
+		}
+		catch (IceStorm.NoSuchTopic ex) {
+		    // Error! No topic found!
+		}
+
+		ic.waitForShutdown();
+
+		topic.unsubscribe(proxy);
+
+
+
+
 		Scanner scan = new Scanner(System.in);
 		int choix;
 		boolean finall = false;
@@ -34,8 +62,8 @@ public class Client {
 
 			    System.out.println("Artiste?");
 			    String na = scan.nextLine();
-                            na = scan.nextLine();
-                            System.out.println("Nom morceau?");
+			    na = scan.nextLine();
+			    System.out.println("Nom morceau?");
 			    String nm = scan.nextLine();
 			    System.out.println("Chemin fichier?");
 			    String cf = scan.nextLine();
@@ -50,7 +78,7 @@ public class Client {
 			    System.out.println("Suppression");
 			    System.out.println("Nom morceau?");
 			    String nmm = scan.nextLine();
-                            nmm = scan.nextLine();
+			    nmm = scan.nextLine();
 			    System.out.println("Nom artiste?");
 			    String nma = scan.nextLine();
 			    printer.bSuprMorceau( nmm, nma );
@@ -60,28 +88,28 @@ public class Client {
 			    System.out.println("Recherche par artiste.");
 			    System.out.println("Artiste?");
 			    String naa = scan.nextLine();
-                            naa = scan.nextLine();
+			    naa = scan.nextLine();
 			    biblAudio.Morceau[] vect = printer.getMorceauxArt( naa );
 			    break;
 			case 5:
 			    System.out.println("Recherche par nom.");
 			    System.out.println("Nom morceau?");
 			    String nab = scan.nextLine();
-                            nab = scan.nextLine();
+			    nab = scan.nextLine();
 			    biblAudio.Morceau[] vectt = printer.getMorceauxMorc( nab );
 			    break;
 			case 6:
 			    System.out.println("Jouer morceau par fichier.");
 			    System.out.println("Entrer le chemin d'acces au fichier.");
 			    String nac = scan.nextLine();
-			     nac = scan.nextLine();
+			    nac = scan.nextLine();
 			    printer.readSoundFic(nac);
 			    break;
 			case 7:
 			    System.out.println("Jouer morceau recherché.");
 			    System.out.println("Nom morceau?");
 			    String nmt = scan.nextLine();
-                            nmt = scan.nextLine();
+			    nmt = scan.nextLine();
 			    System.out.println("Nom artiste?");
 			    String nmy = scan.nextLine();
 			    printer.readSound(nmt,nmy);
