@@ -10,6 +10,15 @@ BiblAudio::BiblAudio(){
 
 
 		Ice::ObjectPrx obj = ic->stringToProxy("IceStorm/TopicManager:tcp -p 9999");
+
+		/*IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast( ic->propertyToProxy("IceStorm/TopicManager.Proxy"/*"IceStorm/TopicManager:tcp -p 9999"*//*) );
+		if(!topicManager)
+		{
+			std::cerr <<  ": invalid proxy" << std::endl;
+			return; 
+		}*/
+
+
 		IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast(obj);
 		IceStorm::TopicPrx topic;
 
