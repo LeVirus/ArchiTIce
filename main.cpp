@@ -20,32 +20,6 @@ int main(int argc, char* argv[])
 	adapter->add(object, ic->stringToIdentity("BiblAudio"));
 	adapter->activate();
 
-
-	/*Ice::ObjectPrx obj = ic->stringToProxy("IceStorm/TopicManager:tcp -p 9999");
-	IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast(obj);
-	IceStorm::TopicPrx topic;
-
-	while (!topic) {
-	    try {
-		topic = topicManager->retrieve("Weather");
-	    } catch (const IceStorm::NoSuchTopic&) {
-		try {
-		    topic = topicManager->create("Weather");
-		} catch (const IceStorm::TopicExists&) {
-		    // Another client created the topic.
-		}
-	    }
-	}*/
-
-	/*Ice::ObjectPrx pub = topic->getPublisher()->ice_oneway();
-	biblAudio::MonitorPrx monitor = biblAudio::MonitorPrx::uncheckedCast(pub);*/
-	/*while (true) {
-	  Morceau m = getMeasurement();
-	  monitor->report(m);
-	  }*/
-
-
-
 	ic->waitForShutdown();
     } catch (const Ice::Exception& e) {
 	cerr << e << endl;

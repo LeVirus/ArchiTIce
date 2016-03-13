@@ -9,30 +9,36 @@ BiblAudio::BiblAudio(){
 		ic = Ice::initialize(/*argc, argv*/);
 
 
-		Ice::ObjectPrx obj = ic->stringToProxy("IceStorm/TopicManager:tcp -p 9999");
+		Ice::ObjectPrx obj = ic->stringToProxy("IceStorm/TopicManager:tcp -p 10001"/*"9999"*/);
 
 		/*IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast( ic->propertyToProxy("IceStorm/TopicManager.Proxy"/*"IceStorm/TopicManager:tcp -p 9999"*//*) );
-		if(!topicManager)
-		{
-			std::cerr <<  ": invalid proxy" << std::endl;
-			return; 
-		}*/
+																							     if(!topicManager)
+																							     {
+																							     std::cerr <<  ": invalid proxy" << std::endl;
+																							     return; 
+																							     }*/
 
 
+			std::cerr << " du topic\n";
 		IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast(obj);
+			std::cerr << " du topic\n";
 		IceStorm::TopicPrx topic;
 
 		while (!topic) {
+			std::cerr << "creation du topic\n";
 			try {
 				topic = topicManager->retrieve("MusicTopic");
 			} catch (const IceStorm::NoSuchTopic&) {
+				std::cerr << "pas de topic\n";
 				try {
 					topic = topicManager->create("MusicTopic");
 				} catch (const IceStorm::TopicExists&) {
+					std::cerr << "another client create the topic\n";
 					// Another client created the topic.
 				}
 			}
 		}
+		std::cerr << " topic cree\n";
 
 		Ice::ObjectPrx pub = topic->getPublisher()->ice_twoway();
 		monitor = biblAudio::MonitorPrx::uncheckedCast(pub);
@@ -110,17 +116,17 @@ biblAudio::mvectRecherche BiblAudio::getMorceauxArt( const std::string &sNomArti
 void BiblAudio::afficherMorceaux(const Ice::Current&)
 {
 
-	std::cout << "Affichage morceaux serveur\n";
+	std::cerr << "Affichage morceaux serveur\n";
 	for( biblAudio::mmapMorceaux::const_iterator it = mmapMorceaux.begin(); it != mmapMorceaux.end(); ++it )
 	{
-		std::cout << (*it) .first <<"\n";
-		std::cout << "Chemin fichier::"<< (*it) .second.msFichier <<"\n";
-		std::cout << "Nom artiste::"<< (*it) .second.msNomArtiste <<"\n";
-		std::cout << "Nom morceau::"<< (*it) .second.msNomMorceau <<"\n";
-		std::cout << "Date de sortie::"<< (*it) .second.muiDateSortie <<"\n";
-		std::cout << "Durée::"<< (*it) .second.muiDureeMorceau <<"\n";
+		std::cerr << (*it) .first <<"\n";
+		std::cerr << "Chemin fichier::"<< (*it) .second.msFichier <<"\n";
+		std::cerr << "Nom artiste::"<< (*it) .second.msNomArtiste <<"\n";
+		std::cerr << "Nom morceau::"<< (*it) .second.msNomMorceau <<"\n";
+		std::cerr << "Date de sortie::"<< (*it) .second.muiDateSortie <<"\n";
+		std::cerr << "Durée::"<< (*it) .second.muiDureeMorceau <<"\n";
 	}
-	std::cout << "Fin morceaux serveur\n";
+	std::cerr << "Fin morceaux serveur\n";
 }
 
 bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sNomMorc, const  std::string &sFic,  int uiDureeMorc , int uiDateSortie, const Ice::Current& c){
@@ -132,7 +138,7 @@ bool BiblAudio::bAjoutMorceau(const std::string &sNomArt, const  std::string &sN
 	morceau.muiDureeMorceau = uiDureeMorc;
 	mmapMorceaux . insert( std::pair< std::string, biblAudio::Morceau > ( sNomArt, morceau ) );
 	monitor->report("add", morceau);
-	std::cout << "Morceau ajouté"<<sNomMorc<<"\n";
+	std::cerr << "Morceau ajouté"<<sNomMorc<<"\n";
 	return true;
 }
 
@@ -145,11 +151,11 @@ bool BiblAudio::bSuprMorceau( const std::string &sNomArt,const std::string &sNom
 		{
 			monitor->report("del", (*it).second);
 			mmapMorceaux.erase(it);
-			std::cout << "Morceau supprimé::"<<sNomMorc<<"\n";
+			std::cerr << "Morceau supprimé::"<<sNomMorc<<"\n";
 			return true;
 		}
 	}
-	std::cout << "Morceau non trouvé.\n";
+	std::cerr << "Morceau non trouvé.\n";
 	return false;
 }
 
@@ -198,17 +204,17 @@ biblAudio::Morceau BiblAudio::rechercherMorceauVect( biblAudio::mvectRecherche m
 
 void BiblAudio::afficherMorceauVect( const biblAudio::mvectRecherche &mvectMorc )const
 {
-	std::cout<<"Affichage morceaux recherchés\n";
+	std::cerr<<"Affichage morceaux recherchés\n";
 	for( unsigned int i=0;i<mvectMorc.size();++i)
 	{
-		std::cout << "Chemin fichier::"<< mvectMorc[i].msFichier <<"\n";
-		std::cout << "Nom artiste::"<< mvectMorc[i].msNomArtiste <<"\n";
-		std::cout << "Nom morceau::"<< mvectMorc[i].msNomMorceau <<"\n";
-		std::cout << "Date de sortie::"<< mvectMorc[i].muiDateSortie <<"\n";
-		std::cout << "Durée::"<< mvectMorc[i].muiDureeMorceau <<"\n";
+		std::cerr << "Chemin fichier::"<< mvectMorc[i].msFichier <<"\n";
+		std::cerr << "Nom artiste::"<< mvectMorc[i].msNomArtiste <<"\n";
+		std::cerr << "Nom morceau::"<< mvectMorc[i].msNomMorceau <<"\n";
+		std::cerr << "Date de sortie::"<< mvectMorc[i].muiDateSortie <<"\n";
+		std::cerr << "Durée::"<< mvectMorc[i].muiDureeMorceau <<"\n";
 
 	}
-	std::cout<<"Fin affichage\n";
+	std::cerr<<"Fin affichage\n";
 }
 
 
