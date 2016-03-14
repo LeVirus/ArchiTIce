@@ -22,29 +22,24 @@ public class Client {
 					System.out.println("Invalid proxy.");
 					throw new Error("Invalid proxy");
 				}
-				Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 10000"/*9999"*/);
+				Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
 				IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
 
-
-				Ice.ObjectAdapter adapter = ic.createObjectAdapter("MonitorAdapter");
-
-				biblAudio.Monitor monitor = new MonitorI();
-				Ice.ObjectPrx proxy = adapter.addWithUUID(monitor).ice_oneway();
-				adapter.activate();
-
 				IceStorm.TopicPrx topic = null;
-				/*try {
-				  topic = topicManager.retrieve("MusicTopic");
-				  java.util.Map qos = null;
-				  topic.subscribeAndGetPublisher(qos, proxy);
-				  }
-				  catch (IceStorm.NoSuchTopic ex) {
-				// Error! No topic found!
-				System.out.println("pas de topic.");
-				}*/
+				while (topic == null) {
+					try {
+						topic = topicManager.retrieve("MusicTopic");
+					} catch (IceStorm.NoSuchTopic ex) {
+						try {
+							topic = topicManager.create("MusicTopic");
+						} catch (IceStorm.TopicExists exx) {
+							// Another client created the topic.
+						}
+					}
+				}
 
-
-
+				Ice.ObjectPrx pub = topic.getPublisher().ice_oneway();
+				biblAudio.MonitorPrx monitor = biblAudio.MonitorPrxHelper.uncheckedCast(pub);
 
 
 				Scanner scan = new Scanner(System.in);
@@ -79,6 +74,7 @@ public class Client {
 							System.out.println("Date sortie?");
 							int ds= scan.nextInt();
 							serverIce.bAjoutMorceau(na,  nm,  cf,  d ,  ds);
+//					monitor.report(m);
 							break;
 						case 3:
 
@@ -137,7 +133,6 @@ public class Client {
 
 				ic.waitForShutdown();
 
-				topic.unsubscribe(proxy);
 
 			} catch (Ice.LocalException e) {
 				e.printStackTrace();

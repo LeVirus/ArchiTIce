@@ -25,7 +25,6 @@ class MonitorI : virtual public biblAudio::Monitor{
 	    std::cout<<action<<"\n";
 	}
 
-//virtual void biblAudio::Monitor::report(const string&, const biblAudio::Morceau&, const Ice::Current&)
 
 };
 
