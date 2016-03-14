@@ -19,29 +19,37 @@ BiblAudio::BiblAudio(){
 																							     }*/
 
 
-			std::cerr << " du topic\n";
 		IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast(obj);
-			std::cerr << " du topic\n";
-		IceStorm::TopicPrx topic;
 
+		Ice::ObjectAdapterPtr adapter = ic->createObjectAdapter("MonitorAdapter");
+		biblAudio::MonitorPtr monitor = new MonitorI;
+
+		Ice::ObjectPrx proxy = adapter->addWithUUID(monitor)->ice_oneway();
+		adapter->activate();
+
+
+		IceStorm::TopicPrx topic;
 		while (!topic) {
-			std::cerr << "creation du topic\n";
+			std::cerr << "recuperation du topic\n";
 			try {
 				topic = topicManager->retrieve("MusicTopic");
+				IceStorm::QoS qos;
+				topic->subscribeAndGetPublisher(qos, proxy);
 			} catch (const IceStorm::NoSuchTopic&) {
 				std::cerr << "pas de topic\n";
-				try {
-					topic = topicManager->create("MusicTopic");
-				} catch (const IceStorm::TopicExists&) {
-					std::cerr << "another client create the topic\n";
-					// Another client created the topic.
-				}
+				/*try {
+				  topic = topicManager->create("MusicTopic");
+				  } catch (const IceStorm::TopicExists&) {
+				  std::cerr << "another client create the topic\n";
+				// Another client created the topic.
+				}*/
 			}
 		}
-		std::cerr << " topic cree\n";
 
-		Ice::ObjectPrx pub = topic->getPublisher()->ice_twoway();
-		monitor = biblAudio::MonitorPrx::uncheckedCast(pub);
+
+
+		/*	Ice::ObjectPrx pub = topic->getPublisher()->ice_twoway();
+			monitor = biblAudio::MonitorPrx::uncheckedCast(pub);*/
 
 	} catch (const Ice::Exception& e) {
 		std::cerr << e << std::endl;

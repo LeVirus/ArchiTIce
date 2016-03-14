@@ -19,12 +19,15 @@ struct Morceau
     int muiDureeMorceau, muiDateSortie;
 };
 
-/*class MonitorI : virtual public biblAudio::Monitor{
+class MonitorI : virtual public biblAudio::Monitor{
     public:
-	virtual void report(const std::string& action, const Morceau &morceau, const Ice::Current&) {
+	virtual void report(const std::string& action, const biblAudio::Morceau &morceau, const Ice::Current&) {
 	    std::cout<<action<<"\n";
 	}
-};*/
+
+//virtual void biblAudio::Monitor::report(const string&, const biblAudio::Morceau&, const Ice::Current&)
+
+};
 
 class BiblAudio : public  biblAudio :: ServeurIce
 {
