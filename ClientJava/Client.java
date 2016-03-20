@@ -22,10 +22,10 @@ public class Client {
 					System.out.println("Invalid proxy.");
 					throw new Error("Invalid proxy");
 				}
-				Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
-				IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
+//				Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
+//				IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
 
-				IceStorm.TopicPrx topic = null;
+/*				IceStorm.TopicPrx topic = null;
 				while (topic == null) {
 					try {
 						topic = topicManager.retrieve("MusicTopic");
@@ -37,9 +37,9 @@ public class Client {
 						}
 					}
 				}
-
-				Ice.ObjectPrx pub = topic.getPublisher().ice_oneway();
-				biblAudio.MonitorPrx monitor = biblAudio.MonitorPrxHelper.uncheckedCast(pub);
+*/
+//				Ice.ObjectPrx pub = topic.getPublisher().ice_oneway();
+//				biblAudio.MonitorPrx monitor = biblAudio.MonitorPrxHelper.uncheckedCast(pub);
 
 
 				Scanner scan = new Scanner(System.in);
