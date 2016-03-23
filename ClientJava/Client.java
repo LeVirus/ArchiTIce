@@ -16,16 +16,17 @@ public class Client {
 			Ice.Communicator ic = null;
 			try {
 				ic = Ice.Util.initialize(args);
-				Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");
+				Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");//local
+				//Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:tcp -h 192.168.1.77 -p 10000");//rasberry
 				biblAudio.ServeurIcePrx serverIce = biblAudio.ServeurIcePrxHelper.checkedCast(base);
 				if (serverIce == null){
 					System.out.println("Invalid proxy.");
 					throw new Error("Invalid proxy");
 				}
-//				Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
-//				IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
+/*				Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
+				IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
 
-/*				IceStorm.TopicPrx topic = null;
+				IceStorm.TopicPrx topic = null;
 				while (topic == null) {
 					try {
 						topic = topicManager.retrieve("MusicTopic");
@@ -36,8 +37,8 @@ public class Client {
 							// Another client created the topic.
 						}
 					}
-				}
-*/
+				}*/
+
 //				Ice.ObjectPrx pub = topic.getPublisher().ice_oneway();
 //				biblAudio.MonitorPrx monitor = biblAudio.MonitorPrxHelper.uncheckedCast(pub);
 

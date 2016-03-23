@@ -28,8 +28,11 @@ all: $(EXE)
 slice: interface.ice
 	slice2cpp $< && mv interface.cpp $(SRC_DIR) && mv interface.h $(INCLUDE)
 
+iceConf: $(EXE)
+	cd iceConf && icebox --Ice.Config=config.icestorm.icebox --daemon --nochdir
+
 $(EXE): $(OBJ) main.cpp
-	$(CXX) $(CXXFLAGS)  $^ $(LDFLAGS) -o $@ -I $(INCLUDE)  -L $(LIB_DIR)
+	$(CXX) $(CXXFLAGS)  $^ $(LDFLAGS) -o $@ -I $(INCLUDE)  #-L $(LIB_DIR)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCLUDE)%.h
 	$(CXX) $(CXXFLAGS)  -c $< -o $@ -I $(INCLUDE)
