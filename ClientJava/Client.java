@@ -14,33 +14,46 @@ public class Client {
 		{
 			int status = 0;
 			Ice.Communicator ic = null;
+			IceStorm.TopicPrx topic = null;
+				Ice.ObjectPrx proxy = null;
 			try {
 				ic = Ice.Util.initialize(args);
 				Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");//local
-				//Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:tcp -h 192.168.1.77 -p 10000");//rasberry
+				//Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:tcp -h 192.168.1.43 -p 10000");//rasberry
+
+
+
 				biblAudio.ServeurIcePrx serverIce = biblAudio.ServeurIcePrxHelper.checkedCast(base);
 				if (serverIce == null){
 					System.out.println("Invalid proxy.");
 					throw new Error("Invalid proxy");
 				}
-/*				Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
+
+
+				Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
 				IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
 
-				IceStorm.TopicPrx topic = null;
-				while (topic == null) {
-					try {
-						topic = topicManager.retrieve("MusicTopic");
-					} catch (IceStorm.NoSuchTopic ex) {
-						try {
-							topic = topicManager.create("MusicTopic");
-						} catch (IceStorm.TopicExists exx) {
-							// Another client created the topic.
-						}
-					}
-				}*/
+				Ice.ObjectAdapterPtr adapter = ic.createObjectAdapter("MonitorAdapter");
 
-//				Ice.ObjectPrx pub = topic.getPublisher().ice_oneway();
-//				biblAudio.MonitorPrx monitor = biblAudio.MonitorPrxHelper.uncheckedCast(pub);
+				Monitor monitor = new MonitorI();
+				proxy = adapter.addWithUUID(monitor).ice_oneway();
+				adapter.activate();
+
+				try {
+					topic = topicManager.retrieve("MusicTopic");
+					java.util.Map qos = null;
+					topic.subscribeAndGetPublisher(qos, proxy);
+				} catch (IceStorm.NoSuchTopic ex) {
+					System.out.println("topic doesn't exist.");
+					/*try {
+					//			topic = topicManager.create("MusicTopic");
+					} catch (IceStorm.TopicExists exx) {
+					// Another client created the topic.
+					}*/
+				}
+
+				//				Ice.ObjectPrx pub = topic.getPublisher().ice_oneway();
+				//				biblAudio.MonitorPrx monitor = biblAudio.MonitorPrxHelper.uncheckedCast(pub);
 
 
 				Scanner scan = new Scanner(System.in);
@@ -75,7 +88,7 @@ public class Client {
 							System.out.println("Date sortie?");
 							int ds= scan.nextInt();
 							serverIce.bAjoutMorceau(na,  nm,  cf,  d ,  ds);
-//					monitor.report(m);
+							//					monitor.report(m);
 							break;
 						case 3:
 
@@ -153,6 +166,7 @@ public class Client {
 				}
 			}
 			System.exit(status);
+			topic.unsubscribe(proxy);
 		}
 
 	public static void afficherMenu(){

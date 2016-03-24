@@ -22,7 +22,7 @@ struct Morceau
 class MonitorI : virtual public biblAudio::Monitor{
     public:
 	virtual void report(const std::string& action, const biblAudio::Morceau &morceau, const Ice::Current&) {
-	    std::cout<<action<<"\n";
+	    std::cerr<<action<<"  "<<morceau.msNomMorceau<<"  \n";
 	}
 
 

@@ -191,12 +191,13 @@ void BiblAudio::readSoundFic(const std::string &pathToFic,const Ice::Current& cu
 
 
 	std::string token = ipCoInfo->remoteAddress.substr(7) + "." + Result/*std::to_string(ipCoInfo->remotePort)*/ + "." + "100000"/*std::to_string(std::chrono::duration_cast<std::chrono::nanoseconds>(duration).count())*/;
-	/*std::string ssout = "#transcode{acodec=mp3,ab=128,channels=2," \
-			     "samplerate=44100}:http{dst=:8090/"+token+".mp3}";*/
-	std::string ssout = "#transcode{vcodec=h264,fps=25,venc=x264{preset=ultrafast,"\
+	std::string ssout = "#transcode{acodec=mp3,ab=128,channels=2," \
+			     //"samplerate=44100}:http{dst=:8090/"+token+".mp3}";
+			     "samplerate=44100}:http{dst="+ipCoInfo->remoteAddress.substr(7)+":8090/music/fez.mp3}";
+	/*std::string ssout = "#transcode{vcodec=h264,fps=25,venc=x264{preset=ultrafast,"\
 		"profile=baseline,tune=zerolatency},vb=512,"                              \
 		"acodec=mpga,ab=64,channels=2}"                                           \
-		":duplicate{dst=display,dst=standard{access=udp,mux=ts,dst=127.0.0.1:"+Result+"}}";
+		":duplicate{dst=display,dst=standard{access=udp,mux=ts,dst=127.0.0.1:"+Result+"}}";*/
 	const char* sout = ssout.c_str();
 
 	std::cerr<<ipCoInfo->remotePort<<"   \n"<<token<<"\n"<<pathToFic<<"\n";;
