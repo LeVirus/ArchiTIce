@@ -18,7 +18,8 @@ public class Client {
 				Ice.ObjectPrx proxy = null;
 			try {
 				ic = Ice.Util.initialize(args);
-				Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");//local
+				//Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:default -p 10000");//local
+				Ice.ObjectPrx base = ic.stringToProxy("MetaServer:default -p 10001");//local
 				//Ice.ObjectPrx base = ic.stringToProxy("BiblAudio:tcp -h 192.168.1.43 -p 10000");//rasberry
 
 
@@ -30,7 +31,7 @@ public class Client {
 				}
 
 
-				Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
+				/*Ice.ObjectPrx obj = ic.stringToProxy("IceStorm/TopicManager:tcp -p 9999");
 				IceStorm.TopicManagerPrx topicManager = IceStorm.TopicManagerPrxHelper.checkedCast(obj);
 
 				Ice.ObjectAdapterPtr adapter = ic.createObjectAdapter("MonitorAdapter");
@@ -44,13 +45,13 @@ public class Client {
 					java.util.Map qos = null;
 					topic.subscribeAndGetPublisher(qos, proxy);
 				} catch (IceStorm.NoSuchTopic ex) {
-					System.out.println("topic doesn't exist.");
+					System.out.println("topic doesn't exist.");*/
 					/*try {
 					//			topic = topicManager.create("MusicTopic");
 					} catch (IceStorm.TopicExists exx) {
 					// Another client created the topic.
 					}*/
-				}
+				//}
 
 				//				Ice.ObjectPrx pub = topic.getPublisher().ice_oneway();
 				//				biblAudio.MonitorPrx monitor = biblAudio.MonitorPrxHelper.uncheckedCast(pub);
@@ -166,7 +167,7 @@ public class Client {
 				}
 			}
 			System.exit(status);
-			topic.unsubscribe(proxy);
+//			topic.unsubscribe(proxy);
 		}
 
 	public static void afficherMenu(){

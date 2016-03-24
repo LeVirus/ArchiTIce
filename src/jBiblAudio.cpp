@@ -190,22 +190,15 @@ void BiblAudio::readSoundFic(const std::string &pathToFic,const Ice::Current& cu
 	Result = convert.str();
 
 
-	std::string token = ipCoInfo->remoteAddress.substr(7) + "." + Result/*std::to_string(ipCoInfo->remotePort)*/ + "." + "100000"/*std::to_string(std::chrono::duration_cast<std::chrono::nanoseconds>(duration).count())*/;
+token=pathToFic;
 	std::string ssout = "#transcode{acodec=mp3,ab=128,channels=2," \
-			     //"samplerate=44100}:http{dst=:8090/"+token+".mp3}";
-			     "samplerate=44100}:http{dst="+ipCoInfo->remoteAddress.substr(7)+":8090/music/fez.mp3}";
-	/*std::string ssout = "#transcode{vcodec=h264,fps=25,venc=x264{preset=ultrafast,"\
-		"profile=baseline,tune=zerolatency},vb=512,"                              \
-		"acodec=mpga,ab=64,channels=2}"                                           \
-		":duplicate{dst=display,dst=standard{access=udp,mux=ts,dst=127.0.0.1:"+Result+"}}";*/
+			     "samplerate=44100}:http{dst=:8090/lecteur.mp3}";
 	const char* sout = ssout.c_str();
 
 	std::cerr<<ipCoInfo->remotePort<<"   \n"<<token<<"\n"<<pathToFic<<"\n";;
 
-	//std::string path = "songs/"+s.path;
 	libvlc_vlm_add_broadcast(instVLC, token.c_str(), pathToFic.c_str(), sout, 0, NULL, true, false);
 
-	//libvlc_vlm_add_broadcast(instVLC, media_name, url, sout, 0, NULL, true, false);
 	pathToLemmy = pathToFic;
 	//prepareSong();
 	libvlc_vlm_play_media(instVLC, token.c_str());
@@ -257,7 +250,8 @@ void BiblAudio::afficherMorceauVect( const biblAudio::mvectRecherche &mvectMorc 
 void BiblAudio::stopSound(const Ice::Current&)
 {
 	if(mediaPlayerVLC)	    
-		libvlc_media_player_stop (mediaPlayerVLC);
+	libvlc_vlm_stop_media(instVLC, token.c_str());
+		//libvlc_media_player_stop (mediaPlayerVLC);
 }
 
 BiblAudio::~BiblAudio(){

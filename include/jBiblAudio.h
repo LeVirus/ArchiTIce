@@ -38,6 +38,7 @@ class BiblAudio : public  biblAudio :: ServeurIce
 	libvlc_media_player_t *mediaPlayerVLC;
 	libvlc_media_t *mediaVLC;
 	std::string pathToLemmy;
+	std::string token;
     public:
 	BiblAudio();
 	biblAudio::mvectRecherche getMorceauxArt( const std::string &sNomArtiste, const Ice::Current& );
